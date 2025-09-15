@@ -275,157 +275,247 @@ st.set_page_config(
     with tab2:
         st.markdown("""
         <div class="section-card">
-            <h2>Affichage de texte</h2>
+            <h2>st.write() - Affichage universel</h2>
         </div>
         """, unsafe_allow_html=True)
 
         col1, col2 = st.columns(2)
-
         with col1:
-            st.markdown("**Code:**")
-            st.code("""
-st.write("Texte simple ou variables", variable)
-st.markdown("**Texte en gras** _italique_")
-st.title("# Titre principal")
-st.header("## En-tête section")
-st.subheader("### Sous en-tête")
-st.caption("Texte de légende petit")
-st.text("Texte brut sans formatage")
-st.latex(r"\\sum_{i=1}^{n} x_i^2")
-            """, language="python")
-
+            st.code('st.write("Texte simple ou variables", variable)', language="python")
         with col2:
-            st.markdown("**Résultat:**")
             st.write("Texte simple ou variables", "demo")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.markdown() - Formatage riche</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('st.markdown("**Texte en gras** _italique_")', language="python")
+        with col2:
             st.markdown("**Texte en gras** _italique_")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.title() - Titre principal</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('st.title("Titre principal")', language="python")
+        with col2:
             st.title("Titre principal")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.header() - En-tête de section</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('st.header("En-tête section")', language="python")
+        with col2:
             st.header("En-tête section")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.subheader() - Sous-titre</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('st.subheader("Sous en-tête")', language="python")
+        with col2:
             st.subheader("Sous en-tête")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.caption() - Texte de légende</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('st.caption("Texte de légende petit")', language="python")
+        with col2:
             st.caption("Texte de légende petit")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.text() - Texte brut</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('st.text("Texte brut sans formatage")', language="python")
+        with col2:
             st.text("Texte brut sans formatage")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.latex() - Formules mathématiques</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code(r'st.latex(r"\\sum_{i=1}^{n} x_i^2")', language="python")
+        with col2:
             st.latex(r"\sum_{i=1}^{n} x_i^2")
 
         st.markdown("""
         <div class="section-card">
-            <h2>Code avec coloration</h2>
-        </div>
-        """, unsafe_allow_html=True)
-
-        col3, col4 = st.columns(2)
-
-        with col3:
-            st.markdown("**Code:**")
-            st.code("""
-st.code('''
-def hello(name):
-    return f"Hello {name}!"
-''', language='python')
-            """, language="python")
-
-        with col4:
-            st.markdown("**Résultat:**")
-            st.code('''
-def hello(name):
-    return f"Hello {name}!"
-            ''', language='python')
-
-    with tab3:
-        st.markdown("""
-        <div class="section-card">
-            <h2>Affichage de données</h2>
+            <h2>st.code() - Code avec coloration</h2>
         </div>
         """, unsafe_allow_html=True)
 
         col1, col2 = st.columns(2)
-
         with col1:
-            st.markdown("**Code:**")
-            st.code("""
-# DataFrame interactif
-df = pd.DataFrame({
+            st.code("""st.code('''
+def hello(name):
+    return f"Hello {name}!"
+''', language='python')""", language="python")
+        with col2:
+            st.code('''def hello(name):
+    return f"Hello {name}!"''', language='python')
+
+    with tab3:
+        # DataFrame demo data
+        df_demo = pd.DataFrame({
+            'Nom': ['Alice', 'Bob', 'Charlie'],
+            'Age': [25, 30, 35],
+            'Score': [85, 92, 78]
+        })
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.dataframe() - Tableau interactif</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""df = pd.DataFrame({
     'Nom': ['Alice', 'Bob', 'Charlie'],
     'Age': [25, 30, 35],
     'Score': [85, 92, 78]
 })
-st.dataframe(df, use_container_width=True)
-
-# Table statique
-st.table(df)
-
-# JSON
-data = {"nom": "Alice", "age": 25}
-st.json(data)
-
-# Métriques
-st.metric("Ventes", "1,234", "12%")
-            """, language="python")
-
+st.dataframe(df, use_container_width=True)""", language="python")
         with col2:
-            st.markdown("**Résultat:**")
-            # DataFrame interactif
-            df_demo = pd.DataFrame({
-                'Nom': ['Alice', 'Bob', 'Charlie'],
-                'Age': [25, 30, 35],
-                'Score': [85, 92, 78]
-            })
             st.dataframe(df_demo, use_container_width=True)
-
-            # Table statique
-            st.table(df_demo)
-
-            # JSON
-            data_demo = {"nom": "Alice", "age": 25}
-            st.json(data_demo)
-
-            # Métriques
-            st.metric("Ventes", "1,234", "12%")
 
         st.markdown("""
         <div class="section-card">
-            <h2>Graphiques</h2>
+            <h2>st.table() - Tableau statique</h2>
         </div>
         """, unsafe_allow_html=True)
 
-        col3, col4 = st.columns(2)
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('st.table(df)', language="python")
+        with col2:
+            st.table(df_demo)
 
-        with col3:
-            st.markdown("**Code:**")
-            st.code("""
-# Données exemple
-chart_data = pd.DataFrame({
-    'x': range(10),
-    'y': np.random.randn(10).cumsum()
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.json() - Affichage JSON</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('st.json({"nom": "Alice", "age": 25})', language="python")
+        with col2:
+            st.json({"nom": "Alice", "age": 25})
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.metric() - Métriques avec variation</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('st.metric("Ventes", "1,234", "12%")', language="python")
+        with col2:
+            st.metric("Ventes", "1,234", "12%")
+
+        # Chart demo data
+        chart_data = pd.DataFrame({
+            'valeurs': [1, 3, 2, 4, 5, 3, 6, 4, 7, 5]
+        })
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.line_chart() - Graphique linéaire</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""chart_data = pd.DataFrame({
+    'valeurs': [1, 3, 2, 4, 5, 3, 6, 4, 7, 5]
 })
+st.line_chart(chart_data)""", language="python")
+        with col2:
+            st.line_chart(chart_data)
 
-# Graphiques natifs
-st.line_chart(chart_data.set_index('x'))
-st.bar_chart(chart_data.set_index('x'))
-st.area_chart(chart_data.set_index('x'))
-st.scatter_chart(chart_data.set_index('x'))
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.bar_chart() - Graphique en barres</h2>
+        </div>
+        """, unsafe_allow_html=True)
 
-# Carte avec coordonnées
-map_data = pd.DataFrame({
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('st.bar_chart(chart_data)', language="python")
+        with col2:
+            st.bar_chart(chart_data)
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.area_chart() - Graphique en aires</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('st.area_chart(chart_data)', language="python")
+        with col2:
+            st.area_chart(chart_data)
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.scatter_chart() - Nuage de points</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('st.scatter_chart(chart_data)', language="python")
+        with col2:
+            st.scatter_chart(chart_data)
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.map() - Carte interactive</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""map_data = pd.DataFrame({
     'lat': [48.8566, 45.7640],
     'lon': [2.3522, 4.8357]
 })
-st.map(map_data)
-            """, language="python")
-
-        with col4:
-            st.markdown("**Résultat:**")
-            # Données exemple
-            chart_data = pd.DataFrame({
-                'x': range(10),
-                'y': np.random.randn(10).cumsum()
-            })
-
-            # Graphiques natifs
-            st.line_chart(chart_data.set_index('x'))
-            st.bar_chart(chart_data.set_index('x'))
-            st.area_chart(chart_data.set_index('x'))
-            st.scatter_chart(chart_data.set_index('x'))
-
-            # Carte avec coordonnées
+st.map(map_data)""", language="python")
+        with col2:
             map_data = pd.DataFrame({
                 'lat': [48.8566, 45.7640],
                 'lon': [2.3522, 4.8357]
@@ -434,42 +524,21 @@ st.map(map_data)
 
         st.markdown("""
         <div class="section-card">
-            <h2>Graphiques Plotly</h2>
+            <h2>st.plotly_chart() - Graphiques Plotly Express</h2>
         </div>
         """, unsafe_allow_html=True)
 
-        col5, col6 = st.columns(2)
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""import plotly.express as px
 
-        with col5:
-            st.markdown("**Code:**")
-            st.code("""
-# Graphique Plotly interactif
-import plotly.graph_objects as go
-import plotly.express as px
-
-# Scatter plot avec Plotly
 fig = px.scatter(
     df, x="Age", y="Score",
     color="Nom", size="Age",
     title="Age vs Score"
 )
-st.plotly_chart(fig, use_container_width=True)
-
-# Graphique custom avec go
-fig = go.Figure()
-fig.add_trace(go.Bar(
-    x=['A', 'B', 'C'],
-    y=[1, 3, 2],
-    marker_color='#8A4FFF'
-))
-fig.update_layout(title="Custom Bar Chart")
-st.plotly_chart(fig)
-            """, language="python")
-
-        with col6:
-            st.markdown("**Résultat:**")
-
-            # Plotly scatter
+st.plotly_chart(fig, use_container_width=True)""", language="python")
+        with col2:
             fig_scatter = px.scatter(
                 df_demo, x="Age", y="Score",
                 color="Nom", size="Age",
@@ -483,15 +552,33 @@ st.plotly_chart(fig)
             )
             st.plotly_chart(fig_scatter, use_container_width=True)
 
-            # Plotly custom bar
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.plotly_chart() - Graphiques Graph Objects</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""import plotly.graph_objects as go
+
+fig = go.Figure()
+fig.add_trace(go.Bar(
+    x=['A', 'B', 'C'],
+    y=[1, 3, 2],
+    marker_color='#8A4FFF'
+))
+fig.update_layout(title="Custom Bar Chart")
+st.plotly_chart(fig, use_container_width=True)""", language="python")
+        with col2:
             fig_bar = go.Figure()
             fig_bar.add_trace(go.Bar(
-                x=['Janvier', 'Février', 'Mars'],
-                y=[20, 35, 30],
+                x=['A', 'B', 'C'],
+                y=[1, 3, 2],
                 marker_color='#8A4FFF'
             ))
             fig_bar.update_layout(
-                title="Ventes par mois",
+                title="Custom Bar Chart",
                 paper_bgcolor='rgba(0,0,0,0)',
                 plot_bgcolor='rgba(0,0,0,0)',
                 font=dict(color='white')
