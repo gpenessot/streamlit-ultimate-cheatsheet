@@ -588,158 +588,272 @@ st.plotly_chart(fig, use_container_width=True)""", language="python")
     with tab4:
         st.markdown("""
         <div class="section-card">
-            <h2>Widgets de saisie</h2>
+            <h2>st.text_input() - Saisie de texte</h2>
         </div>
         """, unsafe_allow_html=True)
 
         col1, col2 = st.columns(2)
-
         with col1:
-            st.markdown("**Code:**")
-            st.code("""
-# Saisie de texte
-name = st.text_input("Nom", "Défaut")
-description = st.text_area("Description")
-
-# Nombres
-age = st.number_input("Age", 0, 100, 25)
-score = st.slider("Score", 0, 100, 50)
-
-# Sélection
-option = st.selectbox("Choix", ["A", "B", "C"])
-options = st.multiselect("Multi", ["X", "Y", "Z"])
-
-# Dates
-date = st.date_input("Date")
-time = st.time_input("Heure")
-
-# Fichiers
-uploaded = st.file_uploader("Upload", type=['csv'])
-
-# Audio et caméra
-audio = st.audio_input("Enregistrer audio")
-photo = st.camera_input("Prendre photo")
-
-# Chat input (pour chatbots)
-chat_input = st.chat_input("Tapez votre message")
-
-# Couleur
-color = st.color_picker("Couleur")
-
-# Feedback
-feedback = st.feedback("thumbs")
-feedback_faces = st.feedback("faces")
-            """, language="python")
-
+            st.code('name = st.text_input("Nom", "Défaut")', language="python")
         with col2:
-            st.markdown("**Résultat:**")
-
-            # Saisie de texte
             name_demo = st.text_input("Nom", "Défaut", key="name_demo")
-            description_demo = st.text_area("Description", key="desc_demo")
-
-            # Nombres
-            age_demo = st.number_input("Age", 0, 100, 25, key="age_demo")
-            score_demo = st.slider("Score", 0, 100, 50, key="score_demo")
-
-            # Sélection
-            option_demo = st.selectbox("Choix", ["A", "B", "C"], key="option_demo")
-            options_demo = st.multiselect("Multi", ["X", "Y", "Z"], key="multi_demo")
-
-            # Dates
-            date_demo = st.date_input("Date", key="date_demo")
-            time_demo = st.time_input("Heure", key="time_demo")
-
-            # Fichiers
-            uploaded_demo = st.file_uploader("Upload", type=['csv'], key="upload_demo")
-
-            # Audio et caméra
-            audio_demo = st.audio_input("Enregistrer audio", key="audio_demo")
-            photo_demo = st.camera_input("Prendre photo", key="photo_demo")
-
-            # Chat input (pour chatbots)
-            chat_input_demo = st.chat_input("Tapez votre message", key="chat_demo")
-
-            # Couleur
-            color_demo = st.color_picker("Couleur", key="color_demo")
-
-            # Feedback
-            feedback_demo = st.feedback("thumbs", key="feedback_demo")
-            feedback_faces_demo = st.feedback("faces", key="faces_demo")
 
         st.markdown("""
         <div class="section-card">
-            <h2>Boutons et contrôles</h2>
+            <h2>st.text_area() - Zone de texte multiligne</h2>
         </div>
         """, unsafe_allow_html=True)
 
-        col3, col4 = st.columns(2)
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('description = st.text_area("Description")', language="python")
+        with col2:
+            description_demo = st.text_area("Description", key="desc_demo")
 
-        with col3:
-            st.markdown("**Code:**")
-            st.code("""
-# Boutons
-if st.button("Cliquer"):
-    st.write("Cliqué!")
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.number_input() - Saisie de nombre</h2>
+        </div>
+        """, unsafe_allow_html=True)
 
-# Cases à cocher
-agree = st.checkbox("J'accepte")
-if agree:
-    st.success("Accepté!")
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('age = st.number_input("Age", 0, 100, 25)', language="python")
+        with col2:
+            age_demo = st.number_input("Age", 0, 100, 25, key="age_demo")
 
-# Boutons radio
-choice = st.radio("Choix", ["Oui", "Non"])
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.slider() - Curseur de valeur</h2>
+        </div>
+        """, unsafe_allow_html=True)
 
-# Toggle
-enabled = st.toggle("Activer")
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('score = st.slider("Score", 0, 100, 50)', language="python")
+        with col2:
+            score_demo = st.slider("Score", 0, 100, 50, key="score_demo")
 
-# Pills
-pill = st.pills("Choisir", ["Option 1", "Option 2", "Option 3"])
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.selectbox() - Menu déroulant</h2>
+        </div>
+        """, unsafe_allow_html=True)
 
-# Segmented Control
-segment = st.segmented_control(
-    "Mode", ["Light", "Dark", "Auto"],
-    default="Light"
-)
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('option = st.selectbox("Choix", ["A", "B", "C"])', language="python")
+        with col2:
+            option_demo = st.selectbox("Choix", ["A", "B", "C"], key="option_demo")
 
-# Download button
-csv_data = df.to_csv()
-st.download_button(
-    "Télécharger CSV",
-    csv_data,
-    "data.csv",
-    "text/csv"
-)
-            """, language="python")
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.multiselect() - Sélection multiple</h2>
+        </div>
+        """, unsafe_allow_html=True)
 
-        with col4:
-            st.markdown("**Résultat:**")
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('options = st.multiselect("Multi", ["X", "Y", "Z"])', language="python")
+        with col2:
+            options_demo = st.multiselect("Multi", ["X", "Y", "Z"], key="multi_demo")
 
-            # Boutons
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.date_input() - Sélecteur de date</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('date = st.date_input("Date")', language="python")
+        with col2:
+            date_demo = st.date_input("Date", key="date_demo")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.time_input() - Sélecteur d'heure</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('time = st.time_input("Heure")', language="python")
+        with col2:
+            time_demo = st.time_input("Heure", key="time_demo")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.file_uploader() - Upload de fichier</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('uploaded = st.file_uploader("Upload", type=[\'csv\'])', language="python")
+        with col2:
+            uploaded_demo = st.file_uploader("Upload", type=['csv'], key="upload_demo")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.color_picker() - Sélecteur de couleur</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('color = st.color_picker("Couleur")', language="python")
+        with col2:
+            color_demo = st.color_picker("Couleur", key="color_demo")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.audio_input() - Enregistrement audio</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('audio = st.audio_input("Enregistrer audio")', language="python")
+        with col2:
+            audio_demo = st.audio_input("Enregistrer audio", key="audio_demo")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.camera_input() - Capture photo</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('photo = st.camera_input("Prendre photo")', language="python")
+        with col2:
+            photo_demo = st.camera_input("Prendre photo", key="photo_demo")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.chat_input() - Saisie de chat</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('chat_input = st.chat_input("Tapez votre message")', language="python")
+        with col2:
+            chat_input_demo = st.chat_input("Tapez votre message", key="chat_demo")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.feedback() - Retour utilisateur</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('feedback = st.feedback("thumbs")', language="python")
+        with col2:
+            feedback_demo = st.feedback("thumbs", key="feedback_demo")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.button() - Bouton cliquable</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""if st.button("Cliquer"):
+    st.write("Cliqué!")""", language="python")
+        with col2:
             if st.button("Cliquer", key="test_btn"):
                 st.write("Cliqué!")
 
-            # Cases à cocher
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.checkbox() - Case à cocher</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""agree = st.checkbox("J'accepte")
+if agree:
+    st.success("Accepté!")""", language="python")
+        with col2:
             agree_demo = st.checkbox("J'accepte", key="agree_demo")
             if agree_demo:
                 st.success("Accepté!")
 
-            # Boutons radio
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.radio() - Boutons radio</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('choice = st.radio("Choix", ["Oui", "Non"])', language="python")
+        with col2:
             choice_demo = st.radio("Choix", ["Oui", "Non"], key="radio_demo")
 
-            # Toggle
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.toggle() - Interrupteur</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('enabled = st.toggle("Activer")', language="python")
+        with col2:
             enabled_demo = st.toggle("Activer", key="toggle_demo")
 
-            # Pills
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.pills() - Boutons pilules</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('pill = st.pills("Choisir", ["Option 1", "Option 2", "Option 3"])', language="python")
+        with col2:
             pill_demo = st.pills("Choisir", ["Option 1", "Option 2", "Option 3"], key="pills_demo")
 
-            # Segmented Control
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.segmented_control() - Contrôle segmenté</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""segment = st.segmented_control(
+    "Mode", ["Light", "Dark", "Auto"],
+    default="Light"
+)""", language="python")
+        with col2:
             segment_demo = st.segmented_control(
                 "Mode", ["Light", "Dark", "Auto"],
                 default="Light", key="segment_demo"
             )
 
-            # Download button
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.download_button() - Bouton de téléchargement</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""csv_data = "nom,age\\nAlice,25\\nBob,30"
+st.download_button(
+    "Télécharger CSV",
+    csv_data,
+    "data.csv",
+    "text/csv"
+)""", language="python")
+        with col2:
             csv_data = "nom,age\nAlice,25\nBob,30"
             st.download_button(
                 "Télécharger CSV",
@@ -752,54 +866,42 @@ st.download_button(
     with tab5:
         st.markdown("""
         <div class="section-card">
-            <h2>Layout - Colonnes et containers</h2>
+            <h2>st.columns() - Colonnes égales</h2>
         </div>
         """, unsafe_allow_html=True)
 
         col1, col2 = st.columns(2)
-
         with col1:
-            st.markdown("**Code:**")
-            st.code("""
-# Colonnes
-col1, col2, col3 = st.columns(3)
+            st.code("""col1, col2, col3 = st.columns(3)
 with col1:
     st.write("Colonne 1")
 with col2:
     st.write("Colonne 2")
 with col3:
-    st.write("Colonne 3")
+    st.write("Colonne 3")""", language="python")
+        with col2:
+            demo_col1, demo_col2, demo_col3 = st.columns(3)
+            with demo_col1:
+                st.info("Colonne 1")
+            with demo_col2:
+                st.info("Colonne 2")
+            with demo_col3:
+                st.info("Colonne 3")
 
-# Colonnes avec ratios
-col_a, col_b = st.columns([2, 1])
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.columns() - Colonnes avec ratios</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""col_a, col_b = st.columns([2, 1])
 with col_a:
     st.write("Large (2/3)")
 with col_b:
-    st.write("Petite (1/3)")
-
-# Container
-with st.container():
-    st.write("Dans un container")
-    st.button("Bouton container")
-
-# Sidebar
-st.sidebar.write("Dans la sidebar")
-st.sidebar.button("Bouton sidebar")
-            """, language="python")
-
+    st.write("Petite (1/3)")""", language="python")
         with col2:
-            st.markdown("**Résultat:**")
-
-            st.markdown("*3 colonnes égales:*")
-            demo_col1, demo_col2, demo_col3 = st.columns(3)
-            with demo_col1:
-                st.info("Col 1")
-            with demo_col2:
-                st.info("Col 2")
-            with demo_col3:
-                st.info("Col 3")
-
-            st.markdown("*Colonnes avec ratio 2:1:*")
             demo_col_a, demo_col_b = st.columns([2, 1])
             with demo_col_a:
                 st.success("Large (2/3)")
@@ -808,146 +910,264 @@ st.sidebar.button("Bouton sidebar")
 
         st.markdown("""
         <div class="section-card">
-            <h2>Expandeurs et onglets</h2>
-        </div>
-        """, unsafe_allow_html=True)
-
-        col3, col4 = st.columns(2)
-
-        with col3:
-            st.markdown("**Code:**")
-            st.code("""
-# Expandeur
-with st.expander("Voir plus"):
-    st.write("Contenu caché")
-    st.slider("Slider caché", 0, 10)
-
-# Onglets dans du contenu
-tab_a, tab_b = st.tabs(["Tab A", "Tab B"])
-with tab_a:
-    st.write("Contenu A")
-with tab_b:
-    st.write("Contenu B")
-
-# Empty placeholder
-placeholder = st.empty()
-placeholder.write("Texte initial")
-# Plus tard:
-# placeholder.write("Texte mis à jour")
-
-# Popover
-with st.popover("Ouvrir popover"):
-    st.write("Contenu du popover")
-            """, language="python")
-
-        with col4:
-            st.markdown("**Résultat:**")
-
-            with st.expander("Cliquer pour développer"):
-                st.write("Contenu qui était masqué")
-                demo_slider = st.slider("Slider dans expandeur", 0, 10, 5, key="exp_slider")
-
-            demo_tab_a, demo_tab_b = st.tabs(["Demo A", "Demo B"])
-            with demo_tab_a:
-                st.write("Contenu de l'onglet A")
-            with demo_tab_b:
-                st.write("Contenu de l'onglet B")
-
-    with tab6:
-        st.markdown("""
-        <div class="section-card">
-            <h2>Messages et statuts</h2>
+            <h2>st.container() - Conteneur</h2>
         </div>
         """, unsafe_allow_html=True)
 
         col1, col2 = st.columns(2)
-
         with col1:
-            st.markdown("**Code:**")
-            st.code("""
-# Messages de statut
-st.success("Opération réussie!")
-st.info("Information")
-st.warning("Attention!")
-st.error("Erreur!")
-
-# Alertes
-st.balloons()  # Animation ballons
-st.snow()      # Animation neige
-
-# Toast notifications
-st.toast("Message toast", icon='🎉')
-
-# Progress bar
-progress = st.progress(0)
-for i in range(100):
-    progress.progress(i + 1)
-
-# Spinner
-with st.spinner('Chargement...'):
-    time.sleep(2)
-    st.success('Terminé!')
-            """, language="python")
-
+            st.code("""with st.container():
+    st.write("Dans un container")
+    st.button("Bouton container")""", language="python")
         with col2:
-            st.markdown("**Résultat:**")
+            with st.container():
+                st.write("Dans un container")
+                st.button("Bouton container", key="container_btn")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.sidebar - Barre latérale</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""st.sidebar.write("Dans la sidebar")
+st.sidebar.button("Bouton sidebar")""", language="python")
+        with col2:
+            st.write("→ Regardez la sidebar à gauche!")
+            st.sidebar.write("✅ Exemple sidebar du cheat sheet")
+            st.sidebar.button("Bouton sidebar demo", key="sidebar_btn_demo")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.expander() - Contenu rétractable</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""with st.expander("Voir plus"):
+    st.write("Contenu caché")
+    st.slider("Slider caché", 0, 10)""", language="python")
+        with col2:
+            with st.expander("Voir plus"):
+                st.write("Contenu caché")
+                st.slider("Slider caché", 0, 10, 5, key="exp_slider")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.tabs() - Onglets internes</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""tab_a, tab_b = st.tabs(["Tab A", "Tab B"])
+with tab_a:
+    st.write("Contenu A")
+with tab_b:
+    st.write("Contenu B")""", language="python")
+        with col2:
+            demo_tab_a, demo_tab_b = st.tabs(["Tab A", "Tab B"])
+            with demo_tab_a:
+                st.write("Contenu A")
+            with demo_tab_b:
+                st.write("Contenu B")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.empty() - Placeholder dynamique</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""placeholder = st.empty()
+placeholder.write("Texte initial")
+# Plus tard:
+# placeholder.write("Texte mis à jour")""", language="python")
+        with col2:
+            placeholder_demo = st.empty()
+            placeholder_demo.write("Texte initial (placeholder)")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.popover() - Menu contextuel</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""with st.popover("Ouvrir popover"):
+    st.write("Contenu du popover")""", language="python")
+        with col2:
+            with st.popover("Ouvrir popover"):
+                st.write("Contenu du popover")
+                st.button("Action dans popover", key="popover_btn")
+
+    with tab6:
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.success() - Message de succès</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('st.success("Opération réussie!")', language="python")
+        with col2:
             st.success("Opération réussie!")
-            st.info("Information importante")
-            st.warning("Attention requise")
-            st.error("Erreur détectée")
 
-            if st.button("Lancer toast", key="toast_btn"):
-                st.toast("Message toast envoyé!", icon='🎉')
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.info() - Message d'information</h2>
+        </div>
+        """, unsafe_allow_html=True)
 
-            if st.button("Animation ballons", key="balloons_btn"):
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('st.info("Information")', language="python")
+        with col2:
+            st.info("Information")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.warning() - Message d'avertissement</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('st.warning("Attention!")', language="python")
+        with col2:
+            st.warning("Attention!")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.error() - Message d'erreur</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('st.error("Erreur!")', language="python")
+        with col2:
+            st.error("Erreur!")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.balloons() - Animation ballons</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('st.balloons()  # Animation ballons', language="python")
+        with col2:
+            if st.button("Lancer ballons", key="balloons_btn"):
                 st.balloons()
 
         st.markdown("""
         <div class="section-card">
-            <h2>Cache et session state</h2>
+            <h2>st.toast() - Notification toast</h2>
         </div>
         """, unsafe_allow_html=True)
 
-        col3, col4 = st.columns(2)
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code('st.toast("Message toast", icon=\'🎉\')', language="python")
+        with col2:
+            if st.button("Lancer toast", key="toast_btn"):
+                st.toast("Message toast", icon='🎉')
 
-        with col3:
-            st.markdown("**Code:**")
-            st.code("""
-# Cache pour données
-@st.cache_data
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.progress() - Barre de progression</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""progress = st.progress(0)
+for i in range(100):
+    progress.progress(i + 1)""", language="python")
+        with col2:
+            if st.button("Démarrer progression", key="progress_btn"):
+                progress_demo = st.progress(0)
+                for i in range(100):
+                    progress_demo.progress(i + 1)
+                    time.sleep(0.01)
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.spinner() - Indicateur de chargement</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""with st.spinner('Chargement...'):
+    time.sleep(2)
+    st.success('Terminé!')""", language="python")
+        with col2:
+            if st.button("Démarrer spinner", key="spinner_btn"):
+                with st.spinner('Chargement...'):
+                    time.sleep(2)
+                    st.success('Terminé!')
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>@st.cache_data - Cache pour données</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""@st.cache_data
 def load_data():
     return pd.read_csv("data.csv")
 
-# Cache pour ressources
-@st.cache_resource
+# Utilisation
+df = load_data()""", language="python")
+        with col2:
+            st.info("Les données sont mises en cache automatiquement")
+            st.write("→ Parfait pour DataFrames, listes, dictionnaires")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>@st.cache_resource - Cache pour ressources</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""@st.cache_resource
 def init_model():
     return load_model("model.pkl")
 
-# Session State
-if 'counter' not in st.session_state:
+# Utilisation
+model = init_model()""", language="python")
+        with col2:
+            st.info("Les ressources sont mises en cache")
+            st.write("→ Parfait pour modèles ML, connexions DB")
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.session_state - État de session</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""if 'counter' not in st.session_state:
     st.session_state.counter = 0
 
 if st.button("Increment"):
     st.session_state.counter += 1
 
-st.write(f"Compteur: {st.session_state.counter}")
-
-# Query parameters
-st.query_params["page"] = "home"
-current_page = st.query_params.get("page", "default")
-
-# Formulaires
-with st.form("my_form"):
-    name = st.text_input("Nom")
-    age = st.number_input("Age", 0, 100)
-    submitted = st.form_submit_button("Valider")
-    if submitted:
-        st.write(f"Nom: {name}, Age: {age}")
-            """, language="python")
-
-        with col4:
-            st.markdown("**Résultat:**")
-
+st.write(f"Compteur: {st.session_state.counter}")""", language="python")
+        with col2:
             # Session state demo
             if 'demo_counter' not in st.session_state:
                 st.session_state.demo_counter = 0
@@ -962,6 +1182,21 @@ with st.form("my_form"):
 
             st.write(f"Compteur: {st.session_state.demo_counter}")
 
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.form() - Formulaires</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""with st.form("my_form"):
+    name = st.text_input("Nom")
+    age = st.number_input("Age", 0, 100)
+    submitted = st.form_submit_button("Valider")
+    if submitted:
+        st.write(f"Nom: {name}, Age: {age}")""", language="python")
+        with col2:
             # Form demo
             with st.form("demo_form", clear_on_submit=True):
                 form_name = st.text_input("Votre nom", key="form_name")
@@ -972,307 +1207,126 @@ with st.form("my_form"):
 
         st.markdown("""
         <div class="section-card">
-            <h2>Fonctionnalités avancées</h2>
+            <h2>st.query_params - Paramètres URL</h2>
         </div>
         """, unsafe_allow_html=True)
 
-        col5, col6 = st.columns(2)
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""# Définir un paramètre
+st.query_params["page"] = "home"
 
-        with col5:
-            st.markdown("**Code:**")
-            st.code("""
-# Fragments (performance)
-@st.fragment
+# Lire un paramètre
+current_page = st.query_params.get("page", "default")""", language="python")
+        with col2:
+            current_page = st.query_params.get("page", "accueil")
+            st.write(f"Page actuelle: {current_page}")
+            if st.button("Changer page", key="change_page"):
+                st.query_params["page"] = "nouvelle"
+                st.rerun()
+
+        st.markdown("""
+        <div class="section-card">
+            <h2>@st.fragment - Optimisation performance</h2>
+        </div>
+        """, unsafe_allow_html=True)
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""@st.fragment
 def expensive_chart():
     # Code coûteux qui ne se ré-exécute que si nécessaire
     return st.line_chart(data)
 
-# Dialogue modal
-@st.dialog("Mon dialogue")
-def show_dialog():
-    st.write("Contenu du dialogue")
-    if st.button("Fermer"):
-        st.rerun()
+# Utilisation
+expensive_chart()""", language="python")
+        with col2:
+            st.info("Évite les re-calculs inutiles")
+            st.write("→ Parfait pour optimiser les gros composants")
 
-if st.button("Ouvrir dialogue"):
-    show_dialog()
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.secrets - Configuration sécurisée</h2>
+        </div>
+        """, unsafe_allow_html=True)
 
-# Secrets (configuration)
-api_key = st.secrets["api_key"]
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""# Dans secrets.toml
+[api]
+key = "your-secret-key"
 
-# Colonnes avec largeurs personnalisées
-col1, col2, col3 = st.columns([1, 2, 1])
+# Dans le code
+api_key = st.secrets["api"]["key"]""", language="python")
+        with col2:
+            st.success("Variables d'environnement sécurisées")
+            st.write("→ Jamais de secrets dans le code!")
 
-# HTML et CSS custom
-st.markdown('''
-<div style="background: red; padding: 10px;">
-    HTML personnalisé
-</div>
-''', unsafe_allow_html=True)
-            """, language="python")
+        st.markdown("""
+        <div class="section-card">
+            <h2>st.rerun() - Recharger l'app</h2>
+        </div>
+        """, unsafe_allow_html=True)
 
-        with col6:
-            st.markdown("**Info avancées:**")
-            st.info("**@st.cache_data** : Pour DataFrames, listes, dictionnaires")
-            st.info("**@st.cache_resource** : Pour modèles ML, connexions DB")
-            st.info("**@st.fragment** : Optimisation performance")
-            st.success("**st.secrets** : Variables d'environnement sécurisées")
-            st.warning("**st.query_params** : Gestion des paramètres URL")
-            st.error("Le cache accélère drastiquement vos apps!")
-
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""if st.button("Recharger"):
+    st.rerun()""", language="python")
+        with col2:
             if st.button("Test rerun", key="rerun_btn"):
                 st.success("Page rechargée!")
                 st.rerun()
 
         st.markdown("""
         <div class="section-card">
-            <h2>Authentification et sécurité</h2>
+            <h2>HTML personnalisé</h2>
         </div>
         """, unsafe_allow_html=True)
 
-        col7, col8 = st.columns(2)
-
-        with col7:
-            st.markdown("**Code:**")
-            st.code("""
-# Login simple avec session state
-def login_page():
-    st.title("Connexion")
-    username = st.text_input("Nom d'utilisateur")
-    password = st.text_input("Mot de passe", type="password")
-
-    if st.button("Se connecter"):
-        if check_credentials(username, password):
-            st.session_state.logged_in = True
-            st.session_state.username = username
-            st.rerun()
-        else:
-            st.error("Identifiants incorrects")
-
-def check_credentials(username, password):
-    # En production, utiliser une vraie DB
-    users = {"admin": "password123", "user": "secret"}
-    return users.get(username) == password
-
-# Protection de page
-if "logged_in" not in st.session_state:
-    st.session_state.logged_in = False
-
-if not st.session_state.logged_in:
-    login_page()
-else:
-    st.write(f"Connecté en tant que: {st.session_state.username}")
-    if st.button("Déconnexion"):
-        st.session_state.logged_in = False
-        st.rerun()
-            """, language="python")
-
-        with col8:
-            st.markdown("**Résultat (démo):**")
-
-            # Simple auth demo
-            if "demo_logged_in" not in st.session_state:
-                st.session_state.demo_logged_in = False
-
-            if not st.session_state.demo_logged_in:
-                st.markdown("*Interface de connexion:*")
-                demo_username = st.text_input("Nom d'utilisateur", key="demo_user")
-                demo_password = st.text_input("Mot de passe", type="password", key="demo_pass")
-
-                if st.button("Se connecter", key="demo_login"):
-                    if demo_username == "admin" and demo_password == "demo":
-                        st.session_state.demo_logged_in = True
-                        st.session_state.demo_username = demo_username
-                        st.success("Connexion réussie!")
-                        st.rerun()
-                    else:
-                        st.error("Utilisez: admin / demo")
-            else:
-                st.success(f"Connecté: {st.session_state.get('demo_username', 'admin')}")
-                if st.button("Déconnexion", key="demo_logout"):
-                    st.session_state.demo_logged_in = False
-                    st.rerun()
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""st.markdown('''
+<div style="background: #8A4FFF; padding: 10px; border-radius: 5px; color: white;">
+    HTML personnalisé
+</div>
+''', unsafe_allow_html=True)""", language="python")
+        with col2:
+            st.markdown('''
+<div style="background: #8A4FFF; padding: 10px; border-radius: 5px; color: white;">
+    HTML personnalisé
+</div>
+            ''', unsafe_allow_html=True)
 
         st.markdown("""
         <div class="section-card">
-            <h2>Hashing et sécurité avancée</h2>
+            <h2>st.chat_message() & st.chat_input() - Interface de chat</h2>
         </div>
         """, unsafe_allow_html=True)
 
-        col9, col10 = st.columns(2)
+        col1, col2 = st.columns(2)
+        with col1:
+            st.code("""# Interface de chat simple
+with st.chat_message("assistant"):
+    st.write("Bonjour! Comment puis-je vous aider?")
 
-        with col9:
-            st.markdown("**Code:**")
-            st.code("""
-import hashlib
-import hmac
+with st.chat_message("user"):
+    st.write("Votre message ici")
 
-# Hashing des mots de passe
-def hash_password(password, salt):
-    return hashlib.pbkdf2_hmac('sha256',
-        password.encode('utf-8'),
-        salt.encode('utf-8'),
-        100000)
+# Input de chat
+prompt = st.chat_input("Tapez votre message")
+if prompt:
+    st.write(f"Vous avez dit: {prompt}")""", language="python")
+        with col2:
+            with st.chat_message("assistant"):
+                st.write("Bonjour! Comment puis-je vous aider?")
 
-# Vérification sécurisée
-def verify_password(password, salt, hashed):
-    return hmac.compare_digest(
-        hash_password(password, salt),
-        hashed
-    )
+            with st.chat_message("user"):
+                st.write("Votre message ici")
 
-# Utilisation avec Streamlit-Authenticator
-# pip install streamlit-authenticator
-import streamlit_authenticator as stauth
-
-# Configuration
-credentials = {
-    'usernames': {
-        'admin': {
-            'email': 'admin@example.com',
-            'name': 'Admin User',
-            'password': '$2b$12$...'  # Hash bcrypt
-        }
-    }
-}
-
-authenticator = stauth.Authenticate(
-    credentials,
-    'app_name',
-    'secret_key',
-    cookie_expiry_days=30
-)
-
-name, authentication_status, username = authenticator.login()
-
-if authentication_status == True:
-    st.write(f'Bienvenue {name}')
-    authenticator.logout('Logout', 'sidebar')
-elif authentication_status == False:
-    st.error('Username/password is incorrect')
-            """, language="python")
-
-        with col10:
-            st.markdown("**Info sécurité:**")
-            st.warning("⚠️ **Jamais** de mots de passe en plain text")
-            st.info("🔒 **Utilisez** des librairies comme `streamlit-authenticator`")
-            st.success("✅ **Hash** avec bcrypt ou pbkdf2")
-            st.error("🚫 **Pas de secrets** dans le code source")
-
-            st.markdown("**Bonnes pratiques:**")
-            st.markdown("""
-            - Utilisez `st.secrets` pour les clés API
-            - Hash des mots de passe avec salt
-            - Sessions avec expiration
-            - HTTPS en production
-            - Validation côté serveur
-            """)
-
-            st.code("""
-# secrets.toml
-[passwords]
-admin_hash = "$2b$12$..."
-api_key = "your-secret-key"
-
-# Utilisation
-admin_hash = st.secrets["passwords"]["admin_hash"]
-            """, language="toml")
-
-        st.markdown("""
-        <div class="section-card">
-            <h2>Interface de chat (ChatGPT-like)</h2>
-        </div>
-        """, unsafe_allow_html=True)
-
-        col11, col12 = st.columns(2)
-
-        with col11:
-            st.markdown("**Code:**")
-            st.code("""
-# Chat complet avec historique
-if "chat_history" not in st.session_state:
-    st.session_state.chat_history = [
-        {"role": "assistant", "content": "Bonjour! Comment puis-je vous aider?"}
-    ]
-
-# Afficher l'historique
-for message in st.session_state.chat_history:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
-
-# Input utilisateur
-if prompt := st.chat_input("Tapez votre message"):
-    # Ajouter message utilisateur
-    st.session_state.chat_history.append(
-        {"role": "user", "content": prompt}
-    )
-
-    # Afficher le message utilisateur
-    with st.chat_message("user"):
-        st.markdown(prompt)
-
-    # Générer réponse (simulation)
-    response = f"Echo: {prompt}"
-
-    # Afficher avec streaming effect
-    with st.chat_message("assistant"):
-        response_stream = st.write_stream([c for c in response])
-
-    # Ajouter à l'historique
-    st.session_state.chat_history.append(
-        {"role": "assistant", "content": response}
-    )
-
-# Effacer historique
-if st.button("Effacer chat"):
-    st.session_state.chat_history = []
-    st.rerun()
-            """, language="python")
-
-        with col12:
-            st.markdown("**Résultat (chat démo):**")
-
-            # Initialize demo chat history
-            if "demo_chat_history" not in st.session_state:
-                st.session_state.demo_chat_history = [
-                    {"role": "assistant", "content": "Bonjour! Je suis votre assistant demo. Comment puis-je vous aider?"}
-                ]
-
-            # Display chat messages in a container with fixed height
-            chat_container = st.container(height=300)
-            with chat_container:
-                for message in st.session_state.demo_chat_history:
-                    with st.chat_message(message["role"]):
-                        st.markdown(message["content"])
-
-            # Chat input
-            if prompt := st.chat_input("Votre message demo", key="demo_chat"):
-                # Add user message
-                st.session_state.demo_chat_history.append(
-                    {"role": "user", "content": prompt}
-                )
-
-                # Generate response
-                responses = [
-                    f"Intéressant! Vous avez dit: '{prompt}'",
-                    f"Je comprends que vous mentionnez: {prompt}",
-                    f"C'est une bonne question sur: {prompt}",
-                    f"Merci pour votre message: '{prompt}'"
-                ]
-                response = random.choice(responses)
-
-                # Add assistant response
-                st.session_state.demo_chat_history.append(
-                    {"role": "assistant", "content": response}
-                )
-
-                st.rerun()
-
-            if st.button("Effacer chat demo", key="clear_demo_chat"):
-                st.session_state.demo_chat_history = [
-                    {"role": "assistant", "content": "Chat effacé! Comment puis-je vous aider?"}
-                ]
-                st.rerun()
+            # Simple chat input demo
+            chat_demo = st.chat_input("Tapez votre message", key="simple_chat")
+            if chat_demo:
+                st.success(f"Vous avez dit: {chat_demo}")
 
 def formation():
     # Container pour centrer le contenu
