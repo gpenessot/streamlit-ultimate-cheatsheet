@@ -1,6 +1,6 @@
 # 🚀 Streamlit Ultimate Cheat Sheet
 
-> **L'aide-mémoire interactif le plus complet pour maîtriser Streamlit** — De l'installation aux techniques avancées de production.
+> **The most comprehensive interactive cheat sheet to master Streamlit** — From installation to advanced production techniques.
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-app-url.streamlit.app)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
@@ -8,106 +8,106 @@
 
 ---
 
-## 💡 Pourquoi cette cheat sheet est différente
+## 💡 Why this cheat sheet is different
 
-Contrairement aux documentations statiques, cette cheat sheet vous montre **code ET résultat côte à côte** pour chaque composant Streamlit. Pas besoin de jongler entre plusieurs onglets — tout est là, en un coup d'œil.
+Unlike static documentation, this cheat sheet shows you **code AND result side by side** for every Streamlit component. No need to juggle between multiple tabs — everything is there at a glance.
 
-### 🎯 Ce que vous trouverez
+### 🎯 What you'll find
 
-- **✨ 100+ exemples interactifs** avec code et rendu instantané
-- **🎨 Composants modernes** : Chat, Pills, Segmented Controls, Authentication...
-- **📊 Graphiques avancés** avec Plotly, cartes interactives, métriques...
-- **🔧 Techniques de mise en page** pour des interfaces professionnelles
-- **⚡ Optimisations de performance** et gestion d'état
-- **🔐 Authentification et sécurité** pour vos applications
+- **✨ 100+ interactive examples** with code and instant rendering
+- **🎨 Modern components**: Chat, Pills, Segmented Controls, Authentication...
+- **📊 Advanced graphics** with Plotly, interactive maps, metrics...
+- **🔧 Layout techniques** for professional interfaces
+- **⚡ Performance optimizations** and state management
+- **🔐 Authentication and security** for your applications
 
-## 🚀 Démarrage rapide
+## 🚀 Quick Start
 
 ```bash
 # Installation
 git clone https://github.com/gpenessot/streamlit-ultimate-cheat-sheet.git
 cd streamlit-ultimate-cheat-sheet
 
-# Avec uv (recommandé)
+# With uv (recommended)
 uv venv
 source .venv/bin/activate  # Linux/Mac
 uv pip install -r requirements.txt
 
-# Ou avec pip
+# Or with pip
 pip install -r requirements.txt
 
-# Lancement
+# Launch
 streamlit run streamlit_cheatsheet.py
 ```
 
-## 📖 Structure de la cheat sheet
+## 📖 Cheat Sheet Structure
 
-### 🏗️ **Installation & Bases**
-Les fondamentaux pour bien commencer avec Streamlit
+### 🏗️ **Installation & Basics**
+The fundamentals to get started with Streamlit
 
-### 📝 **Affichage Texte**
-Markdown, code, métriques, alertes — tout pour structurer vos contenus
+### 📝 **Text Display**
+Markdown, code, metrics, alerts — everything to structure your content
 
-### 📊 **Données & Graphiques**
-DataFrames, Plotly, cartes interactives, graphiques de performance
+### 📊 **Data & Charts**
+DataFrames, Plotly, interactive maps, performance charts
 
-### 🎮 **Widgets Interactifs**
-Boutons, sliders, sélecteurs, et les nouveaux composants 2025
+### 🎮 **Interactive Widgets**
+Buttons, sliders, selectors, and the new 2025 components
 
-### 🎨 **Mise en Page**
-Colonnes, containers, sidebars pour des layouts professionnels
+### 🎨 **Layout**
+Columns, containers, sidebars for professional layouts
 
-### ⚡ **Techniques Avancées**
-Cache, sessions, authentification, et optimisations pour la production
-
----
-
-## 🎓 Passer au niveau supérieur
-
-Cette cheat sheet vous donne les bases, mais **construire des applications Streamlit de niveau production** demande bien plus que connaître l'API.
-
-### Les défis que vous rencontrerez tôt ou tard :
-- 🍝 **Code spaghetti** : votre `app.py` fait 1000+ lignes ?
-- 🐌 **Performance** : lenteur avec des datasets > 10k lignes ?
-- 🔓 **Sécurité** : comment protéger vos données sensibles ?
-- 🚀 **Déploiement** : fini les mises à jour manuelles risquées ?
-
-### La solution : une architecture pensée pour l'entreprise
-
-J'ai créé **[Streamlit Unleashed](https://www.mes-formations-data.fr/formation/streamlit-unleashed)** — la seule formation qui vous apprend à construire des applications Streamlit **prêtes pour la production**.
-
-**Ce que vous y apprendrez :**
-- 🏗️ **Architecture modulaire** qui scale avec votre équipe
-- ⚡ **Optimisations de performance** pour traiter 100k+ lignes instantanément
-- 🔒 **Authentification robuste** (OAuth2, RBAC) validée par les équipes IT
-- 🔄 **Pipeline CI/CD** pour déployer en 5 minutes sans stress
-- 💼 **Justification ROI** pour convaincre vos décideurs
-
-> *"Grâce au module architecture, mon app est maintenant utilisée par toute la boîte au lieu de planter avec 10+ utilisateurs."* — **Alex, Data Scientist Senior**
-
-**[🚀 Découvrir la formation](https://www.mes-formations-data.fr/formation/streamlit-unleashed)**
+### ⚡ **Advanced Techniques**
+Cache, sessions, authentication, and production optimizations
 
 ---
 
-## 🤝 Contribution
+## 🎓 Take it to the next level
 
-Des suggestions d'amélioration ? Un composant manquant ?
+This cheat sheet gives you the basics, but **building production-level Streamlit applications** requires much more than knowing the API.
 
-1. Fork le projet
-2. Créez votre branche (`git checkout -b feature/amazing-component`)
-3. Commit vos changements (`git commit -m 'Add amazing component'`)
-4. Push sur la branche (`git push origin feature/amazing-component`)
-5. Ouvrez une Pull Request
+### Challenges you'll face sooner or later:
+- 🍝 **Spaghetti code**: your `app.py` is 1000+ lines?
+- 🐌 **Performance**: slow with datasets > 10k rows?
+- 🔓 **Security**: how to protect sensitive data?
+- 🚀 **Deployment**: tired of risky manual updates?
+
+### The solution: enterprise-ready architecture
+
+I created **[Streamlit Unleashed](https://www.mes-formations-data.fr/formation/streamlit-unleashed)** — the only training that teaches you to build **production-ready** Streamlit applications.
+
+**What you'll learn:**
+- 🏗️ **Modular architecture** that scales with your team
+- ⚡ **Performance optimizations** to handle 100k+ rows instantly
+- 🔒 **Robust authentication** (OAuth2, RBAC) validated by IT teams
+- 🔄 **CI/CD pipeline** to deploy in 5 minutes stress-free
+- 💼 **ROI justification** to convince your decision-makers
+
+> *"Thanks to the architecture module, my app is now used by the entire company instead of crashing with 10+ users."* — **Alex, Senior Data Scientist**
+
+**[🚀 Discover the training](https://www.mes-formations-data.fr/formation/streamlit-unleashed)**
+
+---
+
+## 🤝 Contributing
+
+Suggestions for improvement? Missing component?
+
+1. Fork the project
+2. Create your branch (`git checkout -b feature/amazing-component`)
+3. Commit your changes (`git commit -m 'Add amazing component'`)
+4. Push to the branch (`git push origin feature/amazing-component`)
+5. Open a Pull Request
 
 ## 📄 License
 
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
 <div align="center">
 
-**Créé avec ❤️ pour la communauté Streamlit**
+**Made with ❤️ for the Streamlit community**
 
 [![GitHub stars](https://img.shields.io/github/stars/gpenessot/streamlit-ultimate-cheat-sheet?style=social)](https://github.com/gpenessot/streamlit-ultimate-cheat-sheet/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/gpenessot/streamlit-ultimate-cheat-sheet?style=social)](https://github.com/gpenessot/streamlit-ultimate-cheat-sheet/network/members)
