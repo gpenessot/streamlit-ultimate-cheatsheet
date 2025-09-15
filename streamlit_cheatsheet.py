@@ -362,20 +362,23 @@ st.metric("Ventes", "1,234", "12%")
 
         with col2:
             st.markdown("**Résultat:**")
+            # DataFrame interactif
             df_demo = pd.DataFrame({
                 'Nom': ['Alice', 'Bob', 'Charlie'],
                 'Age': [25, 30, 35],
                 'Score': [85, 92, 78]
             })
-
-            st.markdown("*DataFrame interactif:*")
             st.dataframe(df_demo, use_container_width=True)
 
-            st.markdown("*Table statique:*")
-            st.table(df_demo.head(2))
+            # Table statique
+            st.table(df_demo)
 
-            st.markdown("*Métrique:*")
-            st.metric("Score moyen", "85", "5%")
+            # JSON
+            data_demo = {"nom": "Alice", "age": 25}
+            st.json(data_demo)
+
+            # Métriques
+            st.metric("Ventes", "1,234", "12%")
 
         st.markdown("""
         <div class="section-card">
@@ -410,28 +413,24 @@ st.map(map_data)
 
         with col4:
             st.markdown("**Résultat:**")
+            # Données exemple
             chart_data = pd.DataFrame({
                 'x': range(10),
                 'y': np.random.randn(10).cumsum()
             })
 
-            st.markdown("*Graphique linéaire:*")
+            # Graphiques natifs
             st.line_chart(chart_data.set_index('x'))
+            st.bar_chart(chart_data.set_index('x'))
+            st.area_chart(chart_data.set_index('x'))
+            st.scatter_chart(chart_data.set_index('x'))
 
-            st.markdown("*Graphique en barres:*")
-            bar_data = pd.DataFrame({
-                'Catégorie': ['A', 'B', 'C'],
-                'Valeur': [10, 20, 15]
-            })
-            st.bar_chart(bar_data.set_index('Catégorie'))
-
-            st.markdown("*Carte interactive:*")
+            # Carte avec coordonnées
             map_data = pd.DataFrame({
-                'lat': [48.8566, 45.7640, 43.2965],
-                'lon': [2.3522, 4.8357, 5.3698],
-                'size': [20, 30, 15]
+                'lat': [48.8566, 45.7640],
+                'lon': [2.3522, 4.8357]
             })
-            st.map(map_data, size='size')
+            st.map(map_data)
 
         st.markdown("""
         <div class="section-card">
@@ -548,39 +547,38 @@ feedback_faces = st.feedback("faces")
         with col2:
             st.markdown("**Résultat:**")
 
-            name_demo = st.text_input("Votre nom", "Utilisateur", key="name_demo")
-            st.write(f"Bonjour {name_demo}!")
+            # Saisie de texte
+            name_demo = st.text_input("Nom", "Défaut", key="name_demo")
+            description_demo = st.text_area("Description", key="desc_demo")
 
-            age_demo = st.slider("Age", 0, 100, 30, key="age_demo")
-            st.write(f"Age: {age_demo} ans")
+            # Nombres
+            age_demo = st.number_input("Age", 0, 100, 25, key="age_demo")
+            score_demo = st.slider("Score", 0, 100, 50, key="score_demo")
 
-            option_demo = st.selectbox("Préférence", ["Option 1", "Option 2", "Option 3"], key="option_demo")
-            st.write(f"Choisi: {option_demo}")
+            # Sélection
+            option_demo = st.selectbox("Choix", ["A", "B", "C"], key="option_demo")
+            options_demo = st.multiselect("Multi", ["X", "Y", "Z"], key="multi_demo")
 
-            date_demo = st.date_input("Date de naissance", key="date_demo")
+            # Dates
+            date_demo = st.date_input("Date", key="date_demo")
+            time_demo = st.time_input("Heure", key="time_demo")
 
-            uploaded_demo = st.file_uploader("Votre fichier", key="upload_demo")
-            if uploaded_demo:
-                st.success(f"Fichier: {uploaded_demo.name}")
+            # Fichiers
+            uploaded_demo = st.file_uploader("Upload", type=['csv'], key="upload_demo")
 
-            # Nouveaux widgets média
-            audio_demo = st.audio_input("Enregistrer un son", key="audio_demo")
-            if audio_demo:
-                st.audio(audio_demo)
+            # Audio et caméra
+            audio_demo = st.audio_input("Enregistrer audio", key="audio_demo")
+            photo_demo = st.camera_input("Prendre photo", key="photo_demo")
 
-            photo_demo = st.camera_input("Prendre une photo", key="photo_demo")
-            if photo_demo:
-                st.image(photo_demo)
+            # Chat input (pour chatbots)
+            chat_input_demo = st.chat_input("Tapez votre message", key="chat_demo")
 
-            # Feedback widgets
+            # Couleur
+            color_demo = st.color_picker("Couleur", key="color_demo")
+
+            # Feedback
             feedback_demo = st.feedback("thumbs", key="feedback_demo")
-            if feedback_demo:
-                st.write(f"Feedback: {'👍' if feedback_demo == 1 else '👎'}")
-
-            faces_demo = st.feedback("faces", key="faces_demo")
-            if faces_demo:
-                faces = ["😞", "🙁", "😐", "🙂", "😀"]
-                st.write(f"Note: {faces[feedback_demo]} ({faces_demo + 1}/5)")
+            feedback_faces_demo = st.feedback("faces", key="faces_demo")
 
         st.markdown("""
         <div class="section-card">
@@ -630,31 +628,39 @@ st.download_button(
         with col4:
             st.markdown("**Résultat:**")
 
-            if st.button("Test bouton", key="test_btn"):
-                st.success("Bouton cliqué!")
+            # Boutons
+            if st.button("Cliquer", key="test_btn"):
+                st.write("Cliqué!")
 
-            agree_demo = st.checkbox("J'accepte les conditions", key="agree_demo")
+            # Cases à cocher
+            agree_demo = st.checkbox("J'accepte", key="agree_demo")
             if agree_demo:
-                st.success("Conditions acceptées!")
+                st.success("Accepté!")
 
-            choice_demo = st.radio("Votre choix", ["Option A", "Option B"], key="radio_demo")
-            st.write(f"Choix: {choice_demo}")
+            # Boutons radio
+            choice_demo = st.radio("Choix", ["Oui", "Non"], key="radio_demo")
 
-            enabled_demo = st.toggle("Mode avancé", key="toggle_demo")
-            if enabled_demo:
-                st.info("Mode avancé activé")
+            # Toggle
+            enabled_demo = st.toggle("Activer", key="toggle_demo")
 
-            # Pills demo
-            pill_demo = st.pills("Thème", ["Clair", "Sombre", "Auto"], key="pills_demo")
-            if pill_demo:
-                st.write(f"Thème: {pill_demo}")
+            # Pills
+            pill_demo = st.pills("Choisir", ["Option 1", "Option 2", "Option 3"], key="pills_demo")
 
-            # Segmented control demo
+            # Segmented Control
             segment_demo = st.segmented_control(
-                "Affichage", ["Liste", "Grille", "Tableau"],
-                default="Liste", key="segment_demo"
+                "Mode", ["Light", "Dark", "Auto"],
+                default="Light", key="segment_demo"
             )
-            st.write(f"Mode affichage: {segment_demo}")
+
+            # Download button
+            csv_data = "nom,age\nAlice,25\nBob,30"
+            st.download_button(
+                "Télécharger CSV",
+                csv_data,
+                "data.csv",
+                "text/csv",
+                key="download_demo"
+            )
 
     with tab5:
         st.markdown("""
