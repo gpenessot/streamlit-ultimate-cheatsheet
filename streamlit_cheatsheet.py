@@ -1261,7 +1261,7 @@ def formation():
 
         # Modules
         st.markdown("""
-        <div class="feature-card" style="background: linear-gradient(135deg, rgba(138, 79, 255, 0.1) 0%, rgba(138, 79, 255, 0.05) 100%); border: 1px solid rgba(138, 79, 255, 0.3);">
+        <div class="feature-card" style="background: linear-gradient(135deg, rgba(138, 79, 255, 0.1) 0%, rgba(138, 79, 255, 0.05) 100%); border: 1px solid rgba(138, 79, 255, 0.3); margin-bottom: 2rem;">
             <span style="font-weight: bold; background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Module 1 & 2</span>
             <h3 style="font-size: 1.8rem; margin: 1rem 0;">🏗️ Architecture & Design System</h3>
             <p>Arrêtez de coder dans un seul fichier. Nous implémentons une structure de projet modulaire, un design system digne d'une startup (CSS, thèmes) et une navigation multi-pages intelligente qui scale.</p>
@@ -1269,7 +1269,7 @@ def formation():
         """, unsafe_allow_html=True)
 
         st.markdown("""
-        <div class="feature-card" style="background: linear-gradient(135deg, rgba(138, 79, 255, 0.1) 0%, rgba(138, 79, 255, 0.05) 100%); border: 1px solid rgba(138, 79, 255, 0.3);">
+        <div class="feature-card" style="background: linear-gradient(135deg, rgba(138, 79, 255, 0.1) 0%, rgba(138, 79, 255, 0.05) 100%); border: 1px solid rgba(138, 79, 255, 0.3); margin-bottom: 2rem;">
             <span style="font-weight: bold; background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Module 3 & 4</span>
             <h3 style="font-size: 1.8rem; margin: 1rem 0;">⚡ Performance & Sécurité</h3>
             <p>Chargez 100k+ lignes de données en un clin d'œil avec des stratégies de cache avancées. Implémentez une authentification robuste (OAuth2, JWT) et un contrôle d'accès basé sur les rôles (RBAC).</p>
@@ -1376,9 +1376,16 @@ def formation():
         with col2:
             st.markdown("""
             <div style="background: rgba(0,0,0,0.3); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid rgba(138, 79, 255, 0.2);">
+                <div style="background: linear-gradient(45deg, #ff6b6b, #ee5a24); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: bold; margin-bottom: 1rem; display: inline-block;">
+                    🔥 EARLY BIRD - Jusqu'au 1er octobre
+                </div>
                 <p style="color: #b3b3b3; font-size: 0.9rem;">Votre montée en compétence</p>
-                <h3 style="font-size: 3rem; font-weight: 900; margin: 1rem 0; background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">97€</h3>
-                <p style="font-size: 0.9rem; margin-bottom: 1.5rem; color: #b3b3b3;">Accès complet et à vie</p>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin: 1rem 0;">
+                    <span style="font-size: 1.5rem; text-decoration: line-through; opacity: 0.5; color: #666;">147€</span>
+                    <h3 style="font-size: 3rem; font-weight: 900; margin: 0; background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">97€</h3>
+                </div>
+                <p style="font-size: 0.9rem; margin-bottom: 1rem; color: #b3b3b3;">Accès complet et à vie</p>
+                <p style="font-size: 0.8rem; color: #ff6b6b; font-weight: bold;">Prix normal: 147€ dès le 1er octobre</p>
             </div>
             """, unsafe_allow_html=True)
 
