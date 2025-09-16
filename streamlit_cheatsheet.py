@@ -289,23 +289,9 @@ st.set_page_config(
             st.write("Icône dans l'onglet navigateur")
 
         # CTA Button
-        st.markdown("""
-        <div style="text-align: center; margin: 3rem 0;">
-            <button onclick="window.open('https://pim.ms/7FEQm0U', '_blank')" style="
-                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
-                color: white;
-                padding: 0.8rem 1.5rem;
-                border-radius: 25px;
-                border: none;
-                font-weight: 600;
-                font-size: 1rem;
-                cursor: pointer;
-                transition: transform 0.2s ease;
-            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
-                🚀 Envie d'aller plus loin ?
-            </button>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
+        st.link_button("🚀 Envie d'aller plus loin ?", "https://pim.ms/7FEQm0U", type="primary")
+        st.markdown('</div>', unsafe_allow_html=True)
 
     with tab2:
         st.markdown("""
@@ -421,23 +407,9 @@ def hello(name):
     return f"Hello {name}!"''', language='python')
 
         # CTA Button
-        st.markdown("""
-        <div style="text-align: center; margin: 3rem 0;">
-            <button onclick="window.open('https://pim.ms/7FEQm0U', '_blank')" style="
-                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
-                color: white;
-                padding: 0.8rem 1.5rem;
-                border-radius: 25px;
-                border: none;
-                font-weight: 600;
-                font-size: 1rem;
-                cursor: pointer;
-                transition: transform 0.2s ease;
-            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
-                🎨 Prêt pour du code production ?
-            </button>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
+        st.link_button("🎨 Prêt pour du code production ?", "https://pim.ms/7FEQm0U", type="primary")
+        st.markdown('</div>', unsafe_allow_html=True)
 
     with tab3:
         # DataFrame demo data
@@ -640,23 +612,9 @@ st.plotly_chart(fig, width='stretch')""", language="python")
             st.plotly_chart(fig_bar, width='stretch')
 
         # CTA Button
-        st.markdown("""
-        <div style="text-align: center; margin: 3rem 0;">
-            <button onclick="window.open('https://pim.ms/7FEQm0U', '_blank')" style="
-                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
-                color: white;
-                padding: 0.8rem 1.5rem;
-                border-radius: 25px;
-                border: none;
-                font-weight: 600;
-                font-size: 1rem;
-                cursor: pointer;
-                transition: transform 0.2s ease;
-            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
-                📊 Créer des apps scalables ?
-            </button>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
+        st.link_button("📊 Créer des apps scalables ?", "https://pim.ms/7FEQm0U", type="primary")
+        st.markdown('</div>', unsafe_allow_html=True)
 
     with tab4:
         st.markdown("""
@@ -937,23 +895,9 @@ st.download_button(
             )
 
         # CTA Button
-        st.markdown("""
-        <div style="text-align: center; margin: 3rem 0;">
-            <button onclick="window.open('https://pim.ms/7FEQm0U', '_blank')" style="
-                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
-                color: white;
-                padding: 0.8rem 1.5rem;
-                border-radius: 25px;
-                border: none;
-                font-weight: 600;
-                font-size: 1rem;
-                cursor: pointer;
-                transition: transform 0.2s ease;
-            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
-                🎮 Maîtriser l'interactivité ?
-            </button>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
+        st.link_button("🎮 Maîtriser l'interactivité ?", "https://pim.ms/7FEQm0U", type="primary")
+        st.markdown('</div>', unsafe_allow_html=True)
 
     with tab5:
         st.markdown("""
@@ -1099,23 +1043,9 @@ placeholder.write("Texte initial")
                 st.button("Action dans popover", key="popover_btn")
 
         # CTA Button
-        st.markdown("""
-        <div style="text-align: center; margin: 3rem 0;">
-            <button onclick="window.open('https://pim.ms/7FEQm0U', '_blank')" style="
-                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
-                color: white;
-                padding: 0.8rem 1.5rem;
-                border-radius: 25px;
-                border: none;
-                font-weight: 600;
-                font-size: 1rem;
-                cursor: pointer;
-                transition: transform 0.2s ease;
-            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
-                🎨 Apprendre le layout pro ?
-            </button>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
+        st.link_button("🎨 Apprendre le layout pro ?", "https://pim.ms/7FEQm0U", type="primary")
+        st.markdown('</div>', unsafe_allow_html=True)
 
     with tab6:
         st.markdown("""
@@ -1440,23 +1370,9 @@ if prompt:
                 st.success(f"Vous avez dit: {chat_demo}")
 
         # CTA Button
-        st.markdown("""
-        <div style="text-align: center; margin: 3rem 0;">
-            <button onclick="window.open('https://pim.ms/7FEQm0U', '_blank')" style="
-                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
-                color: white;
-                padding: 0.8rem 1.5rem;
-                border-radius: 25px;
-                border: none;
-                font-weight: 600;
-                font-size: 1rem;
-                cursor: pointer;
-                transition: transform 0.2s ease;
-            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
-                ⚡ Passer au niveau expert ?
-            </button>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
+        st.link_button("⚡ Passer au niveau expert ?", "https://pim.ms/7FEQm0U", type="primary")
+        st.markdown('</div>', unsafe_allow_html=True)
 
 def formation():
     # Container pour centrer le contenu
