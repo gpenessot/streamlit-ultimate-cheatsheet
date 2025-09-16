@@ -126,6 +126,21 @@ st.markdown("""
         margin-right: 8px;
     }
 
+    /* Style pour les boutons CTA */
+    div[data-testid="stButton"] > button[kind="primary"] {
+        background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%) !important;
+        border: none !important;
+        border-radius: 25px !important;
+        font-weight: 600 !important;
+        padding: 0.8rem 1.5rem !important;
+        transition: transform 0.2s ease !important;
+    }
+
+    div[data-testid="stButton"] > button[kind="primary"]:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 5px 15px rgba(138, 79, 255, 0.3) !important;
+    }
+
     .tab-content {
         display: flex;
         align-items: center;
@@ -273,25 +288,12 @@ st.set_page_config(
             st.write("Icône dans l'onglet navigateur")
 
         # CTA Button
-        st.markdown("""
-        <div style="text-align: center; margin: 3rem 0;">
-            <a href="?page=formation" style="
-                display: inline-block;
-                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
-                color: white;
-                padding: 0.8rem 1.5rem;
-                border-radius: 25px;
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 1rem;
-                transition: transform 0.2s ease;
-                border: none;
-                cursor: pointer;
-            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
-                🚀 Envie d'aller plus loin ?
-            </a>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
+        if st.button("🚀 Envie d'aller plus loin ?", key="cta_tab1", type="primary",
+                    help="Découvrez comment créer des apps Streamlit professionnelles"):
+            st.query_params["page"] = "formation"
+            st.rerun()
+        st.markdown('</div>', unsafe_allow_html=True)
 
     with tab2:
         st.markdown("""
@@ -407,25 +409,12 @@ def hello(name):
     return f"Hello {name}!"''', language='python')
 
         # CTA Button
-        st.markdown("""
-        <div style="text-align: center; margin: 3rem 0;">
-            <a href="?page=formation" style="
-                display: inline-block;
-                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
-                color: white;
-                padding: 0.8rem 1.5rem;
-                border-radius: 25px;
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 1rem;
-                transition: transform 0.2s ease;
-                border: none;
-                cursor: pointer;
-            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
-                🎨 Prêt pour du code production ?
-            </a>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
+        if st.button("🎨 Prêt pour du code production ?", key="cta_tab2", type="primary",
+                    help="Apprenez à structurer vos apps pour la production"):
+            st.query_params["page"] = "formation"
+            st.rerun()
+        st.markdown('</div>', unsafe_allow_html=True)
 
     with tab3:
         # DataFrame demo data
@@ -628,25 +617,12 @@ st.plotly_chart(fig, width='stretch')""", language="python")
             st.plotly_chart(fig_bar, width='stretch')
 
         # CTA Button
-        st.markdown("""
-        <div style="text-align: center; margin: 3rem 0;">
-            <a href="?page=formation" style="
-                display: inline-block;
-                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
-                color: white;
-                padding: 0.8rem 1.5rem;
-                border-radius: 25px;
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 1rem;
-                transition: transform 0.2s ease;
-                border: none;
-                cursor: pointer;
-            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
-                📊 Créer des apps scalables ?
-            </a>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
+        if st.button("📊 Créer des apps scalables ?", key="cta_tab3", type="primary",
+                    help="Découvrez les techniques pour gérer de gros volumes de données"):
+            st.query_params["page"] = "formation"
+            st.rerun()
+        st.markdown('</div>', unsafe_allow_html=True)
 
     with tab4:
         st.markdown("""
@@ -927,25 +903,12 @@ st.download_button(
             )
 
         # CTA Button
-        st.markdown("""
-        <div style="text-align: center; margin: 3rem 0;">
-            <a href="?page=formation" style="
-                display: inline-block;
-                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
-                color: white;
-                padding: 0.8rem 1.5rem;
-                border-radius: 25px;
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 1rem;
-                transition: transform 0.2s ease;
-                border: none;
-                cursor: pointer;
-            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
-                🎮 Maîtriser l'interactivité ?
-            </a>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
+        if st.button("🎮 Maîtriser l'interactivité ?", key="cta_tab4", type="primary",
+                    help="Apprenez à créer des interfaces utilisateur riches"):
+            st.query_params["page"] = "formation"
+            st.rerun()
+        st.markdown('</div>', unsafe_allow_html=True)
 
     with tab5:
         st.markdown("""
@@ -1091,25 +1054,12 @@ placeholder.write("Texte initial")
                 st.button("Action dans popover", key="popover_btn")
 
         # CTA Button
-        st.markdown("""
-        <div style="text-align: center; margin: 3rem 0;">
-            <a href="?page=formation" style="
-                display: inline-block;
-                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
-                color: white;
-                padding: 0.8rem 1.5rem;
-                border-radius: 25px;
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 1rem;
-                transition: transform 0.2s ease;
-                border: none;
-                cursor: pointer;
-            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
-                🎨 Apprendre le layout pro ?
-            </a>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
+        if st.button("🎨 Apprendre le layout pro ?", key="cta_tab5", type="primary",
+                    help="Maîtrisez l'organisation visuelle de vos apps"):
+            st.query_params["page"] = "formation"
+            st.rerun()
+        st.markdown('</div>', unsafe_allow_html=True)
 
     with tab6:
         st.markdown("""
@@ -1434,25 +1384,12 @@ if prompt:
                 st.success(f"Vous avez dit: {chat_demo}")
 
         # CTA Button
-        st.markdown("""
-        <div style="text-align: center; margin: 3rem 0;">
-            <a href="?page=formation" style="
-                display: inline-block;
-                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
-                color: white;
-                padding: 0.8rem 1.5rem;
-                border-radius: 25px;
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 1rem;
-                transition: transform 0.2s ease;
-                border: none;
-                cursor: pointer;
-            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
-                ⚡ Passer au niveau expert ?
-            </a>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
+        if st.button("⚡ Passer au niveau expert ?", key="cta_tab6", type="primary",
+                    help="Découvrez les techniques avancées pour vos apps"):
+            st.query_params["page"] = "formation"
+            st.rerun()
+        st.markdown('</div>', unsafe_allow_html=True)
 
 def formation():
     # Container pour centrer le contenu
@@ -1464,7 +1401,7 @@ def formation():
         <div class="formation-hero">
             <h1>Arrêtez de livrer des POCs.<br/>Construisez de <span style="background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">vraies applications web</span> avec Streamlit.</h1>
             <p>La seule formation pour transformer vos scripts Streamlit en applications de production scalables, sécurisées et prêtes pour l'entreprise.</p>
-            <a href="?page=formation" class="cta-button" style="color: white;">Passer au niveau supérieur</a>
+            <a href="https://pim.ms/7FEQm0U" class="cta-button" style="color: white;">Passer au niveau supérieur</a>
             <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">Pour les Data Scientists & Développeurs qui veulent aller plus loin.</p>
         </div>
         """, unsafe_allow_html=True)
@@ -1651,7 +1588,7 @@ def formation():
             """, unsafe_allow_html=True)
 
             st.markdown("""
-            <a href="?page=formation" class="cta-button" style="display: block; text-align: center; text-decoration: none; margin-top: 1rem; color: white;">
+            <a href="https://pim.ms/7FEQm0U" class="cta-button" style="display: block; text-align: center; text-decoration: none; margin-top: 1rem; color: white;">
                 Rejoindre la formation
             </a>
             """, unsafe_allow_html=True)
@@ -1688,7 +1625,7 @@ def formation():
 <div style="text-align: center; margin: 6rem 0; padding: 4rem 2rem; background: linear-gradient(135deg, rgba(138, 79, 255, 0.1) 0%, rgba(138, 79, 255, 0.05) 100%); border-radius: 16px;">
     <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem;">Passez au niveau supérieur.</h2>
     <p style="font-size: 1.1rem; color: #b3b3b3; max-width: 600px; margin: 0 auto 2rem auto;">Arrêtez de bricoler. Devenez l'expert qui livre des applications data professionnelles, robustes et appréciées.</p>
-    <a href="?page=formation" class="cta-button" style="display: inline-block; text-decoration: none; font-size: 1.1rem; padding: 1rem 2rem; color: white;">
+    <a href="https://pim.ms/7FEQm0U" class="cta-button" style="display: inline-block; text-decoration: none; font-size: 1.1rem; padding: 1rem 2rem; color: white;">
         Je professionnalise mes apps
     </a>
     <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(138, 79, 255, 0.2);">

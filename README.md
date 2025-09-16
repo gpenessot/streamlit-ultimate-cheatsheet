@@ -74,7 +74,7 @@ This cheat sheet gives you the basics, but **building production-level Streamlit
 
 ### The solution: enterprise-ready architecture
 
-I created **[Streamlit Unleashed](https://www.mes-formations-data.fr/formation/streamlit-unleashed)** — the only training that teaches you to build **production-ready** Streamlit applications.
+I created **[Streamlit Unleashed](https://pim.ms/7FEQm0U)** — the only training that teaches you to build **production-ready** Streamlit applications.
 
 **What you'll learn:**
 - 🏗️ **Modular architecture** that scales with your team
@@ -85,7 +85,7 @@ I created **[Streamlit Unleashed](https://www.mes-formations-data.fr/formation/s
 
 > *"Thanks to the architecture module, my app is now used by the entire company instead of crashing with 10+ users."* — **Alex, Senior Data Scientist**
 
-**[🚀 Discover the training](https://www.mes-formations-data.fr/formation/streamlit-unleashed)**
+**[🚀 Discover the training](https://pim.ms/7FEQm0U)**
 
 ---
 
