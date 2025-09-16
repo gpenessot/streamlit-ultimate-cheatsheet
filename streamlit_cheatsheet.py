@@ -289,10 +289,8 @@ st.set_page_config(
 
         # CTA Button
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
-        if st.button("🚀 Envie d'aller plus loin ?", key="cta_tab1", type="primary",
-                    help="Découvrez comment créer des apps Streamlit professionnelles"):
-            st.session_state['switch_to_formation'] = True
-            st.rerun()
+        if st.button("🚀 Envie d'aller plus loin ?", key="cta_tab1", type="primary"):
+            st.switch_page("Devenez un pro")
         st.markdown('</div>', unsafe_allow_html=True)
 
     with tab2:
@@ -410,10 +408,8 @@ def hello(name):
 
         # CTA Button
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
-        if st.button("🎨 Prêt pour du code production ?", key="cta_tab2", type="primary",
-                    help="Apprenez à structurer vos apps pour la production"):
-            st.session_state['switch_to_formation'] = True
-            st.rerun()
+        if st.button("🎨 Prêt pour du code production ?", key="cta_tab2", type="primary"):
+            st.switch_page("Devenez un pro")
         st.markdown('</div>', unsafe_allow_html=True)
 
     with tab3:
@@ -618,10 +614,8 @@ st.plotly_chart(fig, width='stretch')""", language="python")
 
         # CTA Button
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
-        if st.button("📊 Créer des apps scalables ?", key="cta_tab3", type="primary",
-                    help="Découvrez les techniques pour gérer de gros volumes de données"):
-            st.session_state['switch_to_formation'] = True
-            st.rerun()
+        if st.button("📊 Créer des apps scalables ?", key="cta_tab3", type="primary"):
+            st.switch_page("Devenez un pro")
         st.markdown('</div>', unsafe_allow_html=True)
 
     with tab4:
@@ -904,10 +898,8 @@ st.download_button(
 
         # CTA Button
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
-        if st.button("🎮 Maîtriser l'interactivité ?", key="cta_tab4", type="primary",
-                    help="Apprenez à créer des interfaces utilisateur riches"):
-            st.session_state['switch_to_formation'] = True
-            st.rerun()
+        if st.button("🎮 Maîtriser l'interactivité ?", key="cta_tab4", type="primary"):
+            st.switch_page("Devenez un pro")
         st.markdown('</div>', unsafe_allow_html=True)
 
     with tab5:
@@ -1055,10 +1047,8 @@ placeholder.write("Texte initial")
 
         # CTA Button
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
-        if st.button("🎨 Apprendre le layout pro ?", key="cta_tab5", type="primary",
-                    help="Maîtrisez l'organisation visuelle de vos apps"):
-            st.session_state['switch_to_formation'] = True
-            st.rerun()
+        if st.button("🎨 Apprendre le layout pro ?", key="cta_tab5", type="primary"):
+            st.switch_page("Devenez un pro")
         st.markdown('</div>', unsafe_allow_html=True)
 
     with tab6:
@@ -1385,10 +1375,8 @@ if prompt:
 
         # CTA Button
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
-        if st.button("⚡ Passer au niveau expert ?", key="cta_tab6", type="primary",
-                    help="Découvrez les techniques avancées pour vos apps"):
-            st.session_state['switch_to_formation'] = True
-            st.rerun()
+        if st.button("⚡ Passer au niveau expert ?", key="cta_tab6", type="primary"):
+            st.switch_page("Devenez un pro")
         st.markdown('</div>', unsafe_allow_html=True)
 
 def formation():
@@ -1638,19 +1626,9 @@ def formation():
             unsafe_allow_html=True
         )
 
-# Gestion de la navigation
-if st.session_state.get('switch_to_formation', False):
-    # Reset le flag après utilisation
-    st.session_state['switch_to_formation'] = False
-    default_formation = True
-else:
-    # Vérifier les paramètres URL
-    page_param = st.query_params.get("page", None)
-    default_formation = (page_param == "formation")
-
 page = st.navigation([
-    st.Page(cheat_sheet, title="Cheat Sheet", default=not default_formation),
-    st.Page(formation, title="Devenez un pro", default=default_formation),
+    st.Page(cheat_sheet, title="Cheat Sheet", default=True),
+    st.Page(formation, title="Devenez un pro"),
 ], position="top")
 
 page.run()
