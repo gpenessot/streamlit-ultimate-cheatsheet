@@ -291,7 +291,8 @@ st.set_page_config(
         # CTA Button
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
         if st.button("🚀 Envie d'aller plus loin ?", key="cta_tab1", type="primary"):
-            st.switch_page(formation)
+            st.session_state.current_page = "formation"
+            st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
 
     with tab2:
@@ -410,7 +411,8 @@ def hello(name):
         # CTA Button
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
         if st.button("🎨 Prêt pour du code production ?", key="cta_tab2", type="primary"):
-            st.switch_page(formation)
+            st.session_state.current_page = "formation"
+            st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
 
     with tab3:
@@ -616,7 +618,8 @@ st.plotly_chart(fig, width='stretch')""", language="python")
         # CTA Button
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
         if st.button("📊 Créer des apps scalables ?", key="cta_tab3", type="primary"):
-            st.switch_page(formation)
+            st.session_state.current_page = "formation"
+            st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
 
     with tab4:
@@ -900,7 +903,8 @@ st.download_button(
         # CTA Button
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
         if st.button("🎮 Maîtriser l'interactivité ?", key="cta_tab4", type="primary"):
-            st.switch_page(formation)
+            st.session_state.current_page = "formation"
+            st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
 
     with tab5:
@@ -1049,7 +1053,8 @@ placeholder.write("Texte initial")
         # CTA Button
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
         if st.button("🎨 Apprendre le layout pro ?", key="cta_tab5", type="primary"):
-            st.switch_page(formation)
+            st.session_state.current_page = "formation"
+            st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
 
     with tab6:
@@ -1377,7 +1382,8 @@ if prompt:
         # CTA Button
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
         if st.button("⚡ Passer au niveau expert ?", key="cta_tab6", type="primary"):
-            st.switch_page(formation)
+            st.session_state.current_page = "formation"
+            st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
 
 def formation():
@@ -1627,9 +1633,20 @@ def formation():
             unsafe_allow_html=True
         )
 
-page = st.navigation([
-    st.Page(cheat_sheet, title="Cheat Sheet", default=True),
-    st.Page(formation, title="Devenez un pro"),
-], position="top")
+# Initialize session state
+if "current_page" not in st.session_state:
+    st.session_state.current_page = "cheat_sheet"
+
+# Handle navigation based on session state
+if st.session_state.current_page == "formation":
+    page = st.navigation([
+        st.Page(cheat_sheet, title="Cheat Sheet"),
+        st.Page(formation, title="Devenez un pro", default=True),
+    ], position="top")
+else:
+    page = st.navigation([
+        st.Page(cheat_sheet, title="Cheat Sheet", default=True),
+        st.Page(formation, title="Devenez un pro"),
+    ], position="top")
 
 page.run()
