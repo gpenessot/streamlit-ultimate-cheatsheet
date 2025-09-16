@@ -272,6 +272,27 @@ st.set_page_config(
             st.write("Responsive automatique")
             st.write("Icône dans l'onglet navigateur")
 
+        # CTA Button
+        st.markdown("""
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="https://pim.ms/7FEQm0U" style="
+                display: inline-block;
+                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
+                color: white;
+                padding: 0.8rem 1.5rem;
+                border-radius: 25px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 1rem;
+                transition: transform 0.2s ease;
+                border: none;
+                cursor: pointer;
+            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
+                🚀 Envie d'aller plus loin ?
+            </a>
+        </div>
+        """, unsafe_allow_html=True)
+
     with tab2:
         st.markdown("""
         <div class="section-card">
@@ -384,6 +405,27 @@ def hello(name):
         with col2:
             st.code('''def hello(name):
     return f"Hello {name}!"''', language='python')
+
+        # CTA Button
+        st.markdown("""
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="https://pim.ms/7FEQm0U" style="
+                display: inline-block;
+                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
+                color: white;
+                padding: 0.8rem 1.5rem;
+                border-radius: 25px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 1rem;
+                transition: transform 0.2s ease;
+                border: none;
+                cursor: pointer;
+            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
+                🎨 Prêt pour du code production ?
+            </a>
+        </div>
+        """, unsafe_allow_html=True)
 
     with tab3:
         # DataFrame demo data
@@ -584,6 +626,27 @@ st.plotly_chart(fig, use_container_width=True)""", language="python")
                 font=dict(color='white')
             )
             st.plotly_chart(fig_bar, use_container_width=True)
+
+        # CTA Button
+        st.markdown("""
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="https://pim.ms/7FEQm0U" style="
+                display: inline-block;
+                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
+                color: white;
+                padding: 0.8rem 1.5rem;
+                border-radius: 25px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 1rem;
+                transition: transform 0.2s ease;
+                border: none;
+                cursor: pointer;
+            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
+                📊 Créer des apps scalables ?
+            </a>
+        </div>
+        """, unsafe_allow_html=True)
 
     with tab4:
         st.markdown("""
@@ -863,6 +926,27 @@ st.download_button(
                 key="download_demo"
             )
 
+        # CTA Button
+        st.markdown("""
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="https://pim.ms/7FEQm0U" style="
+                display: inline-block;
+                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
+                color: white;
+                padding: 0.8rem 1.5rem;
+                border-radius: 25px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 1rem;
+                transition: transform 0.2s ease;
+                border: none;
+                cursor: pointer;
+            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
+                🎮 Maîtriser l'interactivité ?
+            </a>
+        </div>
+        """, unsafe_allow_html=True)
+
     with tab5:
         st.markdown("""
         <div class="section-card">
@@ -1005,6 +1089,27 @@ placeholder.write("Texte initial")
             with st.popover("Ouvrir popover"):
                 st.write("Contenu du popover")
                 st.button("Action dans popover", key="popover_btn")
+
+        # CTA Button
+        st.markdown("""
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="https://pim.ms/7FEQm0U" style="
+                display: inline-block;
+                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
+                color: white;
+                padding: 0.8rem 1.5rem;
+                border-radius: 25px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 1rem;
+                transition: transform 0.2s ease;
+                border: none;
+                cursor: pointer;
+            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
+                🎨 Apprendre le layout pro ?
+            </a>
+        </div>
+        """, unsafe_allow_html=True)
 
     with tab6:
         st.markdown("""
@@ -1328,6 +1433,27 @@ if prompt:
             if chat_demo:
                 st.success(f"Vous avez dit: {chat_demo}")
 
+        # CTA Button
+        st.markdown("""
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="https://pim.ms/7FEQm0U" style="
+                display: inline-block;
+                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
+                color: white;
+                padding: 0.8rem 1.5rem;
+                border-radius: 25px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 1rem;
+                transition: transform 0.2s ease;
+                border: none;
+                cursor: pointer;
+            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
+                ⚡ Passer au niveau expert ?
+            </a>
+        </div>
+        """, unsafe_allow_html=True)
+
 def formation():
     # Container pour centrer le contenu
     col1, col2, col3 = st.columns([1, 2, 1])
@@ -1343,18 +1469,6 @@ def formation():
         </div>
         """, unsafe_allow_html=True)
 
-        # Social Proof
-        st.markdown("""
-        <div style="text-align: center; padding: 2rem 0; margin-bottom: 3rem;">
-            <p style="font-size: 0.8rem; font-weight: 600; color: #666; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">Des compétences utilisées par les équipes de</p>
-            <div style="display: flex; justify-content: center; gap: 2rem; opacity: 0.4; flex-wrap: wrap;">
-                <span style="font-weight: bold; font-size: 1.2rem;">DataCorp</span>
-                <span style="font-weight: bold; font-size: 1.2rem;">AI Startup</span>
-                <span style="font-weight: bold; font-size: 1.2rem;">Big Tech</span>
-                <span style="font-weight: bold; font-size: 1.2rem;">FinTech Inc</span>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
 
         # Problem Agitation
         st.markdown("""
