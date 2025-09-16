@@ -275,7 +275,7 @@ st.set_page_config(
         # CTA Button
         st.markdown("""
         <div style="text-align: center; margin: 3rem 0;">
-            <a href="https://pim.ms/7FEQm0U" style="
+            <a href="?page=formation" style="
                 display: inline-block;
                 background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
                 color: white;
@@ -409,7 +409,7 @@ def hello(name):
         # CTA Button
         st.markdown("""
         <div style="text-align: center; margin: 3rem 0;">
-            <a href="https://pim.ms/7FEQm0U" style="
+            <a href="?page=formation" style="
                 display: inline-block;
                 background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
                 color: white;
@@ -630,7 +630,7 @@ st.plotly_chart(fig, width='stretch')""", language="python")
         # CTA Button
         st.markdown("""
         <div style="text-align: center; margin: 3rem 0;">
-            <a href="https://pim.ms/7FEQm0U" style="
+            <a href="?page=formation" style="
                 display: inline-block;
                 background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
                 color: white;
@@ -929,7 +929,7 @@ st.download_button(
         # CTA Button
         st.markdown("""
         <div style="text-align: center; margin: 3rem 0;">
-            <a href="https://pim.ms/7FEQm0U" style="
+            <a href="?page=formation" style="
                 display: inline-block;
                 background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
                 color: white;
@@ -1093,7 +1093,7 @@ placeholder.write("Texte initial")
         # CTA Button
         st.markdown("""
         <div style="text-align: center; margin: 3rem 0;">
-            <a href="https://pim.ms/7FEQm0U" style="
+            <a href="?page=formation" style="
                 display: inline-block;
                 background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
                 color: white;
@@ -1436,7 +1436,7 @@ if prompt:
         # CTA Button
         st.markdown("""
         <div style="text-align: center; margin: 3rem 0;">
-            <a href="https://pim.ms/7FEQm0U" style="
+            <a href="?page=formation" style="
                 display: inline-block;
                 background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
                 color: white;
@@ -1464,7 +1464,7 @@ def formation():
         <div class="formation-hero">
             <h1>Arrêtez de livrer des POCs.<br/>Construisez de <span style="background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">vraies applications web</span> avec Streamlit.</h1>
             <p>La seule formation pour transformer vos scripts Streamlit en applications de production scalables, sécurisées et prêtes pour l'entreprise.</p>
-            <a href="https://pim.ms/7FEQm0U" class="cta-button" style="color: white;">Passer au niveau supérieur</a>
+            <a href="?page=formation" class="cta-button" style="color: white;">Passer au niveau supérieur</a>
             <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">Pour les Data Scientists & Développeurs qui veulent aller plus loin.</p>
         </div>
         """, unsafe_allow_html=True)
@@ -1651,7 +1651,7 @@ def formation():
             """, unsafe_allow_html=True)
 
             st.markdown("""
-            <a href="https://pim.ms/7FEQm0U" class="cta-button" style="display: block; text-align: center; text-decoration: none; margin-top: 1rem; color: white;">
+            <a href="?page=formation" class="cta-button" style="display: block; text-align: center; text-decoration: none; margin-top: 1rem; color: white;">
                 Rejoindre la formation
             </a>
             """, unsafe_allow_html=True)
@@ -1688,7 +1688,7 @@ def formation():
 <div style="text-align: center; margin: 6rem 0; padding: 4rem 2rem; background: linear-gradient(135deg, rgba(138, 79, 255, 0.1) 0%, rgba(138, 79, 255, 0.05) 100%); border-radius: 16px;">
     <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem;">Passez au niveau supérieur.</h2>
     <p style="font-size: 1.1rem; color: #b3b3b3; max-width: 600px; margin: 0 auto 2rem auto;">Arrêtez de bricoler. Devenez l'expert qui livre des applications data professionnelles, robustes et appréciées.</p>
-    <a href="https://pim.ms/7FEQm0U" class="cta-button" style="display: inline-block; text-decoration: none; font-size: 1.1rem; padding: 1rem 2rem; color: white;">
+    <a href="?page=formation" class="cta-button" style="display: inline-block; text-decoration: none; font-size: 1.1rem; padding: 1rem 2rem; color: white;">
         Je professionnalise mes apps
     </a>
     <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(138, 79, 255, 0.2);">
@@ -1701,9 +1701,19 @@ def formation():
             unsafe_allow_html=True
         )
 
+# Gestion de la navigation avec paramètres URL
+page_param = st.query_params.get("page", None)
+
+if page_param == "formation":
+    # Redirection automatique vers l'onglet formation
+    default_page = formation
+else:
+    # Page par défaut = cheat sheet
+    default_page = cheat_sheet
+
 page = st.navigation([
-    st.Page(cheat_sheet, title="Cheat Sheet", default=True),
-    st.Page(formation, title="Devenez un pro"),
+    st.Page(cheat_sheet, title="Cheat Sheet", default=(page_param != "formation")),
+    st.Page(formation, title="Devenez un pro", default=(page_param == "formation")),
 ], position="top")
 
 page.run()
