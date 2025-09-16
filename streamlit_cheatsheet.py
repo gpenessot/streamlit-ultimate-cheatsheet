@@ -291,7 +291,7 @@ st.set_page_config(
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
         if st.button("🚀 Envie d'aller plus loin ?", key="cta_tab1", type="primary",
                     help="Découvrez comment créer des apps Streamlit professionnelles"):
-            st.query_params["page"] = "formation"
+            st.session_state['switch_to_formation'] = True
             st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
 
@@ -412,7 +412,7 @@ def hello(name):
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
         if st.button("🎨 Prêt pour du code production ?", key="cta_tab2", type="primary",
                     help="Apprenez à structurer vos apps pour la production"):
-            st.query_params["page"] = "formation"
+            st.session_state['switch_to_formation'] = True
             st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
 
@@ -620,7 +620,7 @@ st.plotly_chart(fig, width='stretch')""", language="python")
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
         if st.button("📊 Créer des apps scalables ?", key="cta_tab3", type="primary",
                     help="Découvrez les techniques pour gérer de gros volumes de données"):
-            st.query_params["page"] = "formation"
+            st.session_state['switch_to_formation'] = True
             st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
 
@@ -906,7 +906,7 @@ st.download_button(
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
         if st.button("🎮 Maîtriser l'interactivité ?", key="cta_tab4", type="primary",
                     help="Apprenez à créer des interfaces utilisateur riches"):
-            st.query_params["page"] = "formation"
+            st.session_state['switch_to_formation'] = True
             st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
 
@@ -1057,7 +1057,7 @@ placeholder.write("Texte initial")
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
         if st.button("🎨 Apprendre le layout pro ?", key="cta_tab5", type="primary",
                     help="Maîtrisez l'organisation visuelle de vos apps"):
-            st.query_params["page"] = "formation"
+            st.session_state['switch_to_formation'] = True
             st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
 
@@ -1387,7 +1387,7 @@ if prompt:
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
         if st.button("⚡ Passer au niveau expert ?", key="cta_tab6", type="primary",
                     help="Découvrez les techniques avancées pour vos apps"):
-            st.query_params["page"] = "formation"
+            st.session_state['switch_to_formation'] = True
             st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
 
@@ -1638,19 +1638,19 @@ def formation():
             unsafe_allow_html=True
         )
 
-# Gestion de la navigation avec paramètres URL
-page_param = st.query_params.get("page", None)
-
-if page_param == "formation":
-    # Redirection automatique vers l'onglet formation
-    default_page = formation
+# Gestion de la navigation
+if st.session_state.get('switch_to_formation', False):
+    # Reset le flag après utilisation
+    st.session_state['switch_to_formation'] = False
+    default_formation = True
 else:
-    # Page par défaut = cheat sheet
-    default_page = cheat_sheet
+    # Vérifier les paramètres URL
+    page_param = st.query_params.get("page", None)
+    default_formation = (page_param == "formation")
 
 page = st.navigation([
-    st.Page(cheat_sheet, title="Cheat Sheet", default=(page_param != "formation")),
-    st.Page(formation, title="Devenez un pro", default=(page_param == "formation")),
+    st.Page(cheat_sheet, title="Cheat Sheet", default=not default_formation),
+    st.Page(formation, title="Devenez un pro", default=default_formation),
 ], position="top")
 
 page.run()
