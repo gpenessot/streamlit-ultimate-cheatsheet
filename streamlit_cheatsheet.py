@@ -289,11 +289,23 @@ st.set_page_config(
             st.write("Icône dans l'onglet navigateur")
 
         # CTA Button
-        st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
-        if st.button("🚀 Envie d'aller plus loin ?", key="cta_tab1", type="primary"):
-            st.session_state.current_page = "formation"
-            st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown("""
+        <div style="text-align: center; margin: 3rem 0;">
+            <button onclick="window.open('https://pim.ms/7FEQm0U', '_blank')" style="
+                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
+                color: white;
+                padding: 0.8rem 1.5rem;
+                border-radius: 25px;
+                border: none;
+                font-weight: 600;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: transform 0.2s ease;
+            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
+                🚀 Envie d'aller plus loin ?
+            </button>
+        </div>
+        """, unsafe_allow_html=True)
 
     with tab2:
         st.markdown("""
@@ -409,11 +421,23 @@ def hello(name):
     return f"Hello {name}!"''', language='python')
 
         # CTA Button
-        st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
-        if st.button("🎨 Prêt pour du code production ?", key="cta_tab2", type="primary"):
-            st.session_state.current_page = "formation"
-            st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown("""
+        <div style="text-align: center; margin: 3rem 0;">
+            <button onclick="window.open('https://pim.ms/7FEQm0U', '_blank')" style="
+                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
+                color: white;
+                padding: 0.8rem 1.5rem;
+                border-radius: 25px;
+                border: none;
+                font-weight: 600;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: transform 0.2s ease;
+            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
+                🎨 Prêt pour du code production ?
+            </button>
+        </div>
+        """, unsafe_allow_html=True)
 
     with tab3:
         # DataFrame demo data
@@ -616,11 +640,23 @@ st.plotly_chart(fig, width='stretch')""", language="python")
             st.plotly_chart(fig_bar, width='stretch')
 
         # CTA Button
-        st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
-        if st.button("📊 Créer des apps scalables ?", key="cta_tab3", type="primary"):
-            st.session_state.current_page = "formation"
-            st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown("""
+        <div style="text-align: center; margin: 3rem 0;">
+            <button onclick="window.open('https://pim.ms/7FEQm0U', '_blank')" style="
+                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
+                color: white;
+                padding: 0.8rem 1.5rem;
+                border-radius: 25px;
+                border: none;
+                font-weight: 600;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: transform 0.2s ease;
+            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
+                📊 Créer des apps scalables ?
+            </button>
+        </div>
+        """, unsafe_allow_html=True)
 
     with tab4:
         st.markdown("""
@@ -901,11 +937,23 @@ st.download_button(
             )
 
         # CTA Button
-        st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
-        if st.button("🎮 Maîtriser l'interactivité ?", key="cta_tab4", type="primary"):
-            st.session_state.current_page = "formation"
-            st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown("""
+        <div style="text-align: center; margin: 3rem 0;">
+            <button onclick="window.open('https://pim.ms/7FEQm0U', '_blank')" style="
+                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
+                color: white;
+                padding: 0.8rem 1.5rem;
+                border-radius: 25px;
+                border: none;
+                font-weight: 600;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: transform 0.2s ease;
+            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
+                🎮 Maîtriser l'interactivité ?
+            </button>
+        </div>
+        """, unsafe_allow_html=True)
 
     with tab5:
         st.markdown("""
@@ -1051,11 +1099,23 @@ placeholder.write("Texte initial")
                 st.button("Action dans popover", key="popover_btn")
 
         # CTA Button
-        st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
-        if st.button("🎨 Apprendre le layout pro ?", key="cta_tab5", type="primary"):
-            st.session_state.current_page = "formation"
-            st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown("""
+        <div style="text-align: center; margin: 3rem 0;">
+            <button onclick="window.open('https://pim.ms/7FEQm0U', '_blank')" style="
+                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
+                color: white;
+                padding: 0.8rem 1.5rem;
+                border-radius: 25px;
+                border: none;
+                font-weight: 600;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: transform 0.2s ease;
+            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
+                🎨 Apprendre le layout pro ?
+            </button>
+        </div>
+        """, unsafe_allow_html=True)
 
     with tab6:
         st.markdown("""
@@ -1380,11 +1440,23 @@ if prompt:
                 st.success(f"Vous avez dit: {chat_demo}")
 
         # CTA Button
-        st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
-        if st.button("⚡ Passer au niveau expert ?", key="cta_tab6", type="primary"):
-            st.session_state.current_page = "formation"
-            st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown("""
+        <div style="text-align: center; margin: 3rem 0;">
+            <button onclick="window.open('https://pim.ms/7FEQm0U', '_blank')" style="
+                background: linear-gradient(45deg, #8A4FFF 0%, #C777FF 100%);
+                color: white;
+                padding: 0.8rem 1.5rem;
+                border-radius: 25px;
+                border: none;
+                font-weight: 600;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: transform 0.2s ease;
+            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0px)'">
+                ⚡ Passer au niveau expert ?
+            </button>
+        </div>
+        """, unsafe_allow_html=True)
 
 def formation():
     # Container pour centrer le contenu
@@ -1633,20 +1705,9 @@ def formation():
             unsafe_allow_html=True
         )
 
-# Initialize session state
-if "current_page" not in st.session_state:
-    st.session_state.current_page = "cheat_sheet"
-
-# Handle navigation based on session state
-if st.session_state.current_page == "formation":
-    page = st.navigation([
-        st.Page(cheat_sheet, title="Cheat Sheet"),
-        st.Page(formation, title="Devenez un pro", default=True),
-    ], position="top")
-else:
-    page = st.navigation([
-        st.Page(cheat_sheet, title="Cheat Sheet", default=True),
-        st.Page(formation, title="Devenez un pro"),
-    ], position="top")
+page = st.navigation([
+    st.Page(cheat_sheet, title="Cheat Sheet", default=True),
+    st.Page(formation, title="Devenez un pro"),
+], position="top")
 
 page.run()
