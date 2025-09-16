@@ -448,9 +448,9 @@ def hello(name):
     'Age': [25, 30, 35],
     'Score': [85, 92, 78]
 })
-st.dataframe(df, use_container_width=True)""", language="python")
+st.dataframe(df, width='stretch')""", language="python")
         with col2:
-            st.dataframe(df_demo, use_container_width=True)
+            st.dataframe(df_demo, width='stretch')
 
         st.markdown("""
         <div class="section-card">
@@ -579,7 +579,7 @@ fig = px.scatter(
     color="Nom", size="Age",
     title="Age vs Score"
 )
-st.plotly_chart(fig, use_container_width=True)""", language="python")
+st.plotly_chart(fig, width='stretch')""", language="python")
         with col2:
             fig_scatter = px.scatter(
                 df_demo, x="Age", y="Score",
@@ -592,7 +592,7 @@ st.plotly_chart(fig, use_container_width=True)""", language="python")
                 plot_bgcolor='rgba(0,0,0,0)',
                 font=dict(color='white')
             )
-            st.plotly_chart(fig_scatter, use_container_width=True)
+            st.plotly_chart(fig_scatter, width='stretch')
 
         st.markdown("""
         <div class="section-card">
@@ -611,7 +611,7 @@ fig.add_trace(go.Bar(
     marker_color='#8A4FFF'
 ))
 fig.update_layout(title="Custom Bar Chart")
-st.plotly_chart(fig, use_container_width=True)""", language="python")
+st.plotly_chart(fig, width='stretch')""", language="python")
         with col2:
             fig_bar = go.Figure()
             fig_bar.add_trace(go.Bar(
@@ -625,7 +625,7 @@ st.plotly_chart(fig, use_container_width=True)""", language="python")
                 plot_bgcolor='rgba(0,0,0,0)',
                 font=dict(color='white')
             )
-            st.plotly_chart(fig_bar, use_container_width=True)
+            st.plotly_chart(fig_bar, width='stretch')
 
         # CTA Button
         st.markdown("""
