@@ -14,6 +14,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
@@ -290,7 +291,7 @@ st.set_page_config(
         # CTA Button
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
         if st.button("🚀 Envie d'aller plus loin ?", key="cta_tab1", type="primary"):
-            st.switch_page("Devenez un pro")
+            st.switch_page(formation)
         st.markdown('</div>', unsafe_allow_html=True)
 
     with tab2:
@@ -409,7 +410,7 @@ def hello(name):
         # CTA Button
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
         if st.button("🎨 Prêt pour du code production ?", key="cta_tab2", type="primary"):
-            st.switch_page("Devenez un pro")
+            st.switch_page(formation)
         st.markdown('</div>', unsafe_allow_html=True)
 
     with tab3:
@@ -615,7 +616,7 @@ st.plotly_chart(fig, width='stretch')""", language="python")
         # CTA Button
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
         if st.button("📊 Créer des apps scalables ?", key="cta_tab3", type="primary"):
-            st.switch_page("Devenez un pro")
+            st.switch_page(formation)
         st.markdown('</div>', unsafe_allow_html=True)
 
     with tab4:
@@ -899,7 +900,7 @@ st.download_button(
         # CTA Button
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
         if st.button("🎮 Maîtriser l'interactivité ?", key="cta_tab4", type="primary"):
-            st.switch_page("Devenez un pro")
+            st.switch_page(formation)
         st.markdown('</div>', unsafe_allow_html=True)
 
     with tab5:
@@ -1048,7 +1049,7 @@ placeholder.write("Texte initial")
         # CTA Button
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
         if st.button("🎨 Apprendre le layout pro ?", key="cta_tab5", type="primary"):
-            st.switch_page("Devenez un pro")
+            st.switch_page(formation)
         st.markdown('</div>', unsafe_allow_html=True)
 
     with tab6:
@@ -1376,7 +1377,7 @@ if prompt:
         # CTA Button
         st.markdown('<div style="text-align: center; margin: 3rem 0;">', unsafe_allow_html=True)
         if st.button("⚡ Passer au niveau expert ?", key="cta_tab6", type="primary"):
-            st.switch_page("Devenez un pro")
+            st.switch_page(formation)
         st.markdown('</div>', unsafe_allow_html=True)
 
 def formation():
